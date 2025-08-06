@@ -1,0 +1,1424 @@
+{% comment %}
+  Bulky Cart Builder Block
+  Based on Figma design with modern UI components
+{% endcomment %}
+
+<style>
+/* Figma Design System - Bulky Cart Builder */
+:root {
+  --font-size: 14px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --radius: 0.3rem;
+  
+  /* Typography scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  
+  /* Spacing scale */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+  outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: var(--font-size);
+  line-height: 1.5;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Utility classes */
+.w-full { width: 100%; }
+.max-w-6xl { max-width: 72rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.p-6 { padding: var(--spacing-6); }
+.space-y-8 > * + * { margin-top: var(--spacing-8); }
+.text-center { text-align: center; }
+.space-y-4 > * + * { margin-top: var(--spacing-4); }
+.text-3xl { font-size: 1.875rem; }
+.font-semibold { font-weight: 600; }
+.text-foreground { color: var(--foreground); }
+.text-muted-foreground { color: var(--muted-foreground); }
+.max-w-2xl { max-width: 42rem; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.top-full { top: 100%; }
+.left-0 { left: 0; }
+.right-0 { right: 0; }
+.mt-2 { margin-top: var(--spacing-2); }
+.z-50 { z-index: 50; }
+.max-h-96 { max-height: 24rem; }
+.overflow-y-auto { overflow-y: auto; }
+.p-2 { padding: var(--spacing-2); }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.p-3 { padding: var(--spacing-3); }
+.hover\:bg-accent:hover { background-color: var(--accent); }
+.rounded-lg { border-radius: var(--radius); }
+.transition-colors { transition: color 0.15s ease-in-out; }
+.flex-1 { flex: 1 1 0%; }
+.space-y-1 > * + * { margin-top: var(--spacing-1); }
+.gap-2 { gap: var(--spacing-2); }
+.font-medium { font-weight: 500; }
+.text-xs { font-size: var(--text-xs); }
+.gap-4 { gap: var(--spacing-4); }
+.text-sm { font-size: var(--text-sm); }
+.border { border: 1px solid var(--border); }
+.rounded-lg { border-radius: var(--radius); }
+.px-2 { padding-left: var(--spacing-2); padding-right: var(--spacing-2); }
+.py-1 { padding-top: var(--spacing-1); padding-bottom: var(--spacing-1); }
+.hover\:bg-accent:hover { background-color: var(--accent); }
+.rounded-l-lg { border-top-left-radius: var(--radius); border-bottom-left-radius: var(--radius); }
+.px-3 { padding-left: var(--spacing-3); padding-right: var(--spacing-3); }
+.min-w-\[3rem\] { min-width: 3rem; }
+.text-center { text-align: center; }
+.border-x { border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
+.rounded-r-lg { border-top-right-radius: var(--radius); border-bottom-right-radius: var(--radius); }
+.gap-1 { gap: var(--spacing-1); }
+.w-3 { width: 0.75rem; }
+.h-3 { height: 0.75rem; }
+.w-4 { width: 1rem; }
+.h-4 { height: 1rem; }
+.gap-4 { gap: var(--spacing-4); }
+.overflow-x-auto { overflow-x: auto; }
+.w-full { width: 100%; }
+.border-b { border-bottom: 1px solid var(--border); }
+.text-left { text-align: left; }
+.py-3 { padding-top: var(--spacing-3); padding-bottom: var(--spacing-3); }
+.px-2 { padding-left: var(--spacing-2); padding-right: var(--spacing-2); }
+.font-medium { font-weight: 500; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.hover\:bg-accent\/50:hover { background-color: rgba(233, 235, 239, 0.5); }
+.py-4 { padding-top: var(--spacing-4); padding-bottom: var(--spacing-4); }
+/* .bg-muted { background-color: var(--muted); } */
+.px-2 { padding-left: var(--spacing-2); padding-right: var(--spacing-2); }
+.rounded { border-radius: 0.25rem; }
+.font-mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; }
+.w-24 { width: 6rem; }
+.border-0 { border: 0; }
+.h-8 { height: 2rem; }
+.\[appearance\:textfield\] { appearance: textfield; }
+.\[&::-webkit-outer-spin-button\]\:appearance-none::-webkit-outer-spin-button { appearance: none; }
+.\[&::-webkit-inner-spin-button\]\:appearance-none::-webkit-inner-spin-button { appearance: none; }
+.group { }
+.group:hover .group-hover\:opacity-100 { opacity: 1; }
+.opacity-0 { opacity: 0; }
+.transition-opacity { transition: opacity 0.15s ease-in-out; }
+.justify-center { justify-content: center; }
+.text-destructive { color: var(--destructive); }
+.hover\:text-destructive:hover { color: var(--destructive); }
+.hover\:bg-destructive\/10:hover { background-color: rgba(212, 24, 61, 0.1); }
+.pt-4 { padding-top: var(--spacing-4); }
+.mt-4 { margin-top: var(--spacing-4); }
+.border-t { border-top: 1px solid var(--border); }
+.font-semibold { font-weight: 600; }
+.text-lg { font-size: var(--text-lg); }
+.disabled\:opacity-50:disabled { opacity: 0.5; }
+.disabled\:cursor-not-allowed:disabled { cursor: not-allowed; }
+.disabled\:bg-muted:disabled { background-color: var(--muted); }
+.disabled\:text-muted-foreground:disabled { color: var(--muted-foreground); }
+.disabled\:border-muted:disabled { border-color: var(--muted); }
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-weight: var(--font-weight-medium);
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  border: none;
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size);
+  line-height: 1.5;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary);
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent);
+}
+
+.btn-sm {
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: var(--text-sm);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--foreground);
+}
+
+.btn-ghost:hover {
+  background-color: var(--accent);
+}
+
+/* Input styles */
+.input {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: var(--input-background);
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size);
+  transition: border-color 0.15s ease-in-out;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 2px rgba(3, 2, 19, 0.1);
+}
+
+/* Card styles */
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: var(--spacing-6);
+  border-bottom: 1px solid var(--border);
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--card-foreground);
+}
+
+.card-content {
+  padding: var(--spacing-6);
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-1) var(--spacing-2);
+}
+
+.badge-secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.badge-outline {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-3) var(--spacing-2);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  font-weight: var(--font-weight-medium);
+  color: var(--muted-foreground);
+}
+
+/* Search icon */
+.search-icon {
+  position: absolute;
+  left: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .p-6 { padding: var(--spacing-4); }
+  .text-3xl { font-size: 1.5rem; }
+  .max-w-6xl { max-width: 100%; }
+  .card-header { padding: var(--spacing-4); }
+  .card-content { padding: var(--spacing-4); }
+  .table { font-size: 0.875rem; }
+  .table th,
+  .table td { padding: var(--spacing-2) var(--spacing-1); }
+}
+</style>
+
+<div class="w-full max-w-6xl mx-auto p-6 space-y-8">
+  <!-- Header Section -->
+  <div class="text-center space-y-4">
+    <h1 class="text-3xl font-semibold text-foreground">
+      Bulky Cart Builder (Beta)
+    </h1>
+    <p class="text-muted-foreground max-w-2xl mx-auto">
+      Search and add multiple products to your shopping list efficiently. 
+      Perfect for bulk orders and managing large product selections with ease.
+    </p>
+    
+    <!-- Instructions for First-Time Users -->
+    <div class="max-w-4xl mx-auto" style="background-color: transparent !important;">
+      <div class="border-b border-black" style="background-color: transparent !important;">
+        <button class="w-full p-4 text-left flex items-center justify-between transition-colors" onclick="toggleInstructions()" style="background-color: transparent !important; border: none; outline: none;">
+          <h2 class="text-lg font-semibold text-foreground">Get Started</h2>
+          <svg id="instructions-icon" class="w-4 h-4 text-muted-foreground transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 9l6 6 6-6"></path>
+          </svg>
+        </button>
+        
+        <div id="instructions-content" class="hidden p-6 space-y-4 text-left">
+          <div class="space-y-3">
+            <div>
+              <h3 class="font-medium text-foreground">🔍 Search & Add Products</h3>
+              <p class="text-sm text-muted-foreground">
+                Type in the search box to find products by name, SKU, or variant. Click the "Add" button to add items to your shopping list. 
+                Out-of-stock items will be greyed out and cannot be added.
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="font-medium text-foreground">📋 Manage Your Shopping List</h3>
+              <p class="text-sm text-muted-foreground">
+                Use the quantity controls to adjust amounts, or remove items entirely. The total value updates automatically as you modify your list.
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="font-medium text-foreground">📥 Import from CSV</h3>
+              <p class="text-sm text-muted-foreground">
+                Click "Import CSV" to bulk add products. Your CSV file must include these columns:
+              </p>
+              <ul class="text-sm text-muted-foreground ml-4 mt-1 space-y-1">
+                <li>• <strong>Product Title</strong> - The name of the product</li>
+                <li>• <strong>Variant</strong> - The specific variant (e.g., "Large", "Red")</li>
+                <li>• <strong>SKU</strong> - Stock keeping unit</li>
+                <li>• <strong>Price</strong> - Product price (numbers only)</li>
+                <li>• <strong>Quantity</strong> - How many to add (numbers only)</li>
+                <li>• <strong>Variant ID</strong> - <span class="text-destructive font-medium">REQUIRED</span> - The exact Shopify variant ID</li>
+              </ul>
+              <p class="text-sm text-destructive mt-2">
+                <strong>Important:</strong> The Variant ID is crucial for the import to work correctly. You can find this ID in your Shopify admin or by copying it from the shopping list after adding items manually.
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="font-medium text-foreground">📤 Export & Add to Cart</h3>
+              <p class="text-sm text-muted-foreground">
+                Export your list as CSV for backup, or click "Add to Cart" to transfer all items to your Shopify cart and proceed to checkout.
+              </p>
+            </div>
+            
+            <div>
+              <h3 class="font-medium text-foreground">💡 Tips</h3>
+              <ul class="text-sm text-muted-foreground ml-4 space-y-1">
+                <li>• Use the search to quickly find products by name or SKU</li>
+                <li>• Click the variant ID to copy it to clipboard for CSV imports</li>
+                <li>• Out-of-stock items are clearly marked and cannot be added</li>
+                <li>• Your shopping list persists until you clear it or refresh the page</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Section -->
+  <div class="relative">
+    <div class="relative">
+      {% comment %} <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg> {% endcomment %}
+      <input 
+        type="text" 
+        id="search-input"
+        placeholder="Search products by name, SKU, or variant..." 
+        class="input pl-10 pr-4 py-3 w-full text-base"
+      />
+    </div>
+    {% comment %} <div class="mt-2">
+      <button class="btn btn-outline btn-sm" onclick="testAPIs()">Test APIs</button>
+      <button class="btn btn-outline btn-sm" onclick="testCart()">Test Cart</button>
+    </div> {% endcomment %}
+    
+    <!-- Search Results -->
+    <div id="search-results" class="card absolute top-full left-0 right-0 mt-2 z-50 max-h-96 overflow-y-auto" style="display: none;">
+      <div class="p-2" id="results-container">
+        <!-- Results will be populated here -->
+      </div>
+    </div>
+    
+    <!-- Loading Spinner -->
+    <div id="search-loader" class="card absolute top-full left-0 right-0 mt-2 z-50" style="display: none;">
+      <div class="p-4 text-center">
+        <div class="inline-flex items-center gap-2">
+          <div class="animate-spin rounded-full h-4 w-4 border-2 border-primary border-t-transparent"></div>
+          <span class="text-sm text-muted-foreground">Searching products...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping List Section -->
+  <div class="card">
+    <div class="card-header">
+      <div class="flex items-center justify-between">
+        <h2 class="card-title">Shopping List</h2>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <button class="btn btn-outline btn-sm" onclick="importCSV()">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+              </svg>
+              Import CSV
+            </button>
+            <button class="btn btn-outline btn-sm" onclick="exportCSV()" id="export-btn" disabled>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              Export CSV
+            </button>
+            <button class="btn btn-outline btn-sm text-destructive hover:text-destructive hover:bg-destructive/10" onclick="clearAll()" id="clear-btn" disabled>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+              Clear All
+            </button>
+          </div>
+          <div class="flex items-center gap-4 text-sm text-muted-foreground">
+            <span id="total-items">0 items</span>
+            <span class="font-medium text-foreground">
+              Total: $<span id="total-value">0.00</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card-content">
+      <!-- Empty State -->
+      <div id="empty-state" class="text-center py-12 text-muted-foreground">
+        <div class="mb-4">
+          <div class="w-16 h-16 mx-auto bg-muted rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+          </div>
+        </div>
+        <p class="text-lg mb-2">Your shopping list is empty</p>
+        <p class="text-sm mb-4">Search for products above to start building your list</p>
+        <p class="text-xs text-muted-foreground">
+          Or import a CSV file with columns: Product Title, Variant, SKU, Price, Quantity, Variant ID
+        </p>
+      </div>
+
+      <!-- Shopping List Table -->
+      <div id="shopping-list" style="display: none;">
+        <div class="overflow-x-auto">
+          <table class="table">
+          <thead>
+              <tr class="border-b">
+                <th class="text-left py-3 px-2 font-medium text-muted-foreground">Product Title</th>
+                <th class="text-left py-3 px-2 font-medium text-muted-foreground">Variant</th>
+                <th class="text-left py-3 px-2 font-medium text-muted-foreground">SKU</th>
+                <th class="text-right py-3 px-2 font-medium text-muted-foreground">Price</th>
+                <th class="text-center py-3 px-2 font-medium text-muted-foreground">Qty</th>
+                <th class="text-left py-3 px-2 font-medium text-muted-foreground">Variant ID</th>
+                <th class="text-center py-3 px-2 font-medium text-muted-foreground">Actions</th>
+            </tr>
+          </thead>
+            <tbody id="cart-items">
+              <!-- Cart items will be populated here -->
+          </tbody>
+        </table>
+        </div>
+        
+        <!-- Summary Footer -->
+        <div class="flex justify-between items-center pt-4 mt-4 border-t">
+          <div class="text-sm text-muted-foreground">
+            <span id="summary-items">0</span> items in your shopping list
+          </div>
+          <div class="flex items-center gap-4">
+            <button class="btn btn-primary" onclick="addToShopifyCart()" id="add-to-cart-btn" disabled>
+              {% comment %} <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01"></path>
+              </svg> {% endcomment %}
+              Add to Cart
+            </button>
+            <div class="font-semibold text-lg">
+              Total: $<span id="summary-total">0.00</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Hidden file input for CSV import -->
+<input type="file" id="csv-input" accept=".csv" style="display: none;" onchange="handleFileImport(event)">
+
+  <script>
+// Shopify product data - will be populated from your store
+let shopifyProducts = [];
+
+// Function to load products from Shopify
+async function loadShopifyProducts() {
+  try {
+    // Method 1: Try to get products from the current page
+    let products = [];
+    
+    // Look for product data in various formats
+    const productElements = document.querySelectorAll('[data-product-id], .product-item, .product-card, .product, [class*="product"]');
+    
+    console.log('Found product elements:', productElements.length);
+    
+    if (productElements.length > 0) {
+      productElements.forEach(element => {
+        const productId = element.getAttribute('data-product-id') || element.getAttribute('data-product-id');
+        const productTitle = element.querySelector('[data-product-title], .product-title, h3, h4')?.textContent?.trim() || '';
+        const productHandle = element.getAttribute('data-product-handle') || '';
+        
+        // Get variants from the page
+        const variantElements = element.querySelectorAll('[data-variant-id], .variant-option');
+        if (variantElements.length > 0) {
+          variantElements.forEach(variantEl => {
+            const variantId = variantEl.getAttribute('data-variant-id') || variantEl.getAttribute('data-variant-id');
+            const variantTitle = variantEl.getAttribute('data-variant-title') || variantEl.textContent?.trim() || '';
+            const variantSku = variantEl.getAttribute('data-variant-sku') || '';
+            const variantPrice = parseFloat(variantEl.getAttribute('data-variant-price') || '0');
+            
+            if (productId && variantId) {
+              products.push({
+                id: productId,
+                title: productTitle,
+                variant: variantTitle,
+                sku: variantSku,
+                price: variantPrice,
+                variantId: variantId,
+                handle: productHandle
+              });
+            }
+          });
+        } else {
+          // If no variants found, treat the product as a single variant
+          const variantId = element.getAttribute('data-variant-id') || productId;
+          const variantTitle = element.getAttribute('data-variant-title') || '';
+          const variantSku = element.getAttribute('data-variant-sku') || '';
+          const variantPrice = parseFloat(element.getAttribute('data-variant-price') || '0');
+          
+          if (productId) {
+            products.push({
+              id: productId,
+              title: productTitle,
+              variant: variantTitle,
+              sku: variantSku,
+              price: variantPrice,
+              variantId: variantId,
+              handle: productHandle
+            });
+          }
+        }
+      });
+    }
+    
+    // Method 2: If no products found on page, try to fetch from Shopify API
+    if (products.length === 0) {
+      try {
+        // Try to fetch products from Shopify's product API
+        const response = await fetch('/products.json?limit=50');
+        if (response.ok) {
+          const data = await response.json();
+          products = data.products.flatMap(product => 
+            product.variants.map(variant => ({
+              id: product.id.toString(),
+              title: product.title,
+              variant: variant.title,
+              sku: variant.sku || '',
+              price: parseFloat(variant.price),
+              variantId: variant.id.toString(),
+              handle: product.handle
+            }))
+          );
+        }
+      } catch (apiError) {
+        console.log('Could not fetch from Shopify API:', apiError);
+      }
+    }
+    
+    shopifyProducts = products;
+    console.log('Loaded Shopify products:', shopifyProducts.length);
+    console.log('Products loaded:', shopifyProducts);
+    
+    // If still no products, show a message
+    if (shopifyProducts.length === 0) {
+      console.log('No products found on page. Products will be loaded via predictive search API when searching.');
+    }
+  } catch (error) {
+    console.error('Error loading Shopify products:', error);
+  }
+}
+
+let cartItems = [];
+let searchResults = [];
+
+// Search functionality with Shopify Predictive Search API
+let searchTimeout;
+
+document.getElementById('search-input').addEventListener('input', function(e) {
+  const query = e.target.value.trim();
+  
+  // Clear previous timeout
+  if (searchTimeout) {
+    clearTimeout(searchTimeout);
+  }
+  
+  if (query === '') {
+    hideSearchResults();
+    return;
+  }
+
+  console.log('Search input:', query);
+  
+  // Debounce search to avoid too many API calls
+  searchTimeout = setTimeout(() => {
+    showSearchLoader();
+    performPredictiveSearch(query);
+  }, 300);
+});
+
+async function performPredictiveSearch(query) {
+  try {
+    console.log('Searching for:', query);
+    
+    let products = [];
+    
+    // Use a simple, reliable search approach
+    try {
+      // Get products using pagination
+      let allProducts = [];
+      let page = 1;
+      const limit = 250;
+      const maxPages = 10; // Search through 10 pages (2500 products)
+      
+      while (page <= maxPages) {
+        const response = await fetch(`/products.json?limit=${limit}&page=${page}`);
+        
+        if (response.ok) {
+          const data = await response.json();
+          console.log(`Page ${page} products:`, data.products ? data.products.length : 0);
+          
+          if (data.products && data.products.length > 0) {
+            allProducts = allProducts.concat(data.products);
+            page++;
+          } else {
+            break;
+          }
+        } else {
+          console.log('Failed to fetch page', page);
+          break;
+        }
+      }
+      
+      console.log('Total products for filtering:', allProducts.length);
+      
+      // Log some sample products to verify loading
+      console.log('Sample products loaded:');
+      allProducts.slice(0, 5).forEach((product, index) => {
+        console.log(`Product ${index + 1}: ${product.title} - SKUs: ${product.variants.map(v => v.sku || 'N/A').join(', ')}`);
+      });
+      
+      if (allProducts.length > 0) {
+        const searchLower = query.toLowerCase();
+        const searchTerms = searchLower.split(' ').filter(term => term.length > 0);
+        
+        const filteredProducts = allProducts.filter(product => {
+          const titleLower = product.title.toLowerCase();
+          const tagsLower = Array.isArray(product.tags) ? product.tags.join(' ').toLowerCase() : (product.tags || '').toLowerCase();
+          const vendorLower = (product.vendor || '').toLowerCase();
+          const typeLower = (product.product_type || '').toLowerCase();
+          
+          // For short queries (likely SKUs), prioritize exact matches
+          if (query.length <= 6) {
+            const exactSkuMatch = product.variants.some(variant => {
+              const sku = (variant.sku || '').toLowerCase();
+              return sku === searchLower;
+            });
+            
+            if (exactSkuMatch) {
+              console.log('Found exact SKU match for:', query);
+              return true;
+            }
+          }
+          
+          // Check if any search term matches title, tags, vendor, or product type
+          const titleMatch = searchTerms.some(term => titleLower.includes(term));
+          const tagsMatch = searchTerms.some(term => tagsLower.includes(term));
+          const vendorMatch = searchTerms.some(term => vendorLower.includes(term));
+          const typeMatch = searchTerms.some(term => typeLower.includes(term));
+          
+          // Also check variants for SKU and title matches
+          const variantMatch = product.variants.some(variant => {
+            const variantTitleLower = variant.title.toLowerCase();
+            const skuLower = (variant.sku || '').toLowerCase();
+            return searchTerms.some(term => 
+              variantTitleLower.includes(term) || skuLower.includes(term)
+            );
+          });
+          
+          return titleMatch || tagsMatch || vendorMatch || typeMatch || variantMatch;
+        });
+        
+        console.log('Filtered products count:', filteredProducts.length);
+        
+        // Add filtered products to results with relevance scoring
+        const scoredProducts = [];
+        
+        filteredProducts.forEach(product => {
+          product.variants.forEach(variant => {
+            // Calculate relevance score
+            let score = 0;
+            const titleLower = product.title.toLowerCase();
+            const searchLower = query.toLowerCase();
+            const searchTerms = searchLower.split(' ').filter(term => term.length > 0);
+            
+            // SKU exact match gets highest priority (especially for short queries)
+            if (variant.sku && variant.sku.toLowerCase() === searchLower) {
+              score += 2000; // Highest score for exact SKU match
+            }
+            // SKU contains search query
+            else if (variant.sku && variant.sku.toLowerCase().includes(searchLower)) {
+              score += 1000;
+            }
+            
+            // Exact title match gets high score
+            if (titleLower === searchLower) {
+              score += 1500;
+            }
+            // Title starts with search query
+            else if (titleLower.startsWith(searchLower)) {
+              score += 800;
+            }
+            // Title contains all search terms in order
+            else if (searchTerms.every(term => titleLower.includes(term))) {
+              score += 600;
+            }
+            // Title contains search query as substring
+            else if (titleLower.includes(searchLower)) {
+              score += 400;
+            }
+            // Partial title match
+            else if (searchTerms.some(term => titleLower.includes(term))) {
+              score += 200;
+            }
+            
+            // Variant title match
+            if (variant.title.toLowerCase().includes(searchLower)) {
+              score += 300;
+            }
+            
+            scoredProducts.push({
+              id: product.id.toString(),
+              title: product.title,
+              variant: variant.title,
+              sku: variant.sku || '',
+              price: parseFloat(variant.price),
+              variantId: variant.id.toString(),
+              handle: product.handle,
+              image: product.featured_image || product.image,
+              available: variant.available,
+              score: score
+            });
+          });
+        });
+        
+        // Sort by relevance score (highest first)
+        scoredProducts.sort((a, b) => b.score - a.score);
+        
+        // Remove score from final results
+        products = scoredProducts.map(product => {
+          const { score, ...productWithoutScore } = product;
+          return productWithoutScore;
+        });
+      }
+    } catch (productsError) {
+      console.log('Search failed:', productsError);
+    }
+    
+    console.log('Final search results:', products);
+    hideSearchLoader();
+    showSearchResults(products);
+    
+  } catch (error) {
+    console.error('Search error:', error);
+    hideSearchLoader();
+    showSearchResults([]);
+  }
+}
+
+function showSearchResults(products) {
+  searchResults = products;
+  console.log('=== SHOW SEARCH RESULTS ===');
+  console.log('Products to show:', products);
+  console.log('Search results set to:', searchResults);
+  console.log('Search results length:', searchResults.length);
+  
+  const container = document.getElementById('results-container');
+  const resultsDiv = document.getElementById('search-results');
+  
+  console.log('Container element:', container);
+  console.log('Results div element:', resultsDiv);
+  
+  if (products.length === 0) {
+    container.innerHTML = `
+      <div class="p-4 text-center text-muted-foreground">
+        No products found for "${document.getElementById('search-input').value}"
+      </div>
+    `;
+  } else {
+    container.innerHTML = products.map(product => `
+      <div class="flex items-center justify-between p-3 hover:bg-accent rounded-lg transition-colors">
+        <div class="flex-1 space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="font-medium">${product.title}</span>
+            <span class="badge badge-secondary text-xs">${product.variant}</span>
+            ${!product.available ? '<span class="badge badge-outline text-xs text-destructive">Out of Stock</span>' : ''}
+          </div>
+          <div class="flex items-center gap-4 text-sm text-muted-foreground">
+            <span>SKU: ${product.sku || 'N/A'}</span>
+            <span class="font-medium text-foreground">$${product.price.toFixed(2)}</span>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-2">
+          <div class="flex items-center border rounded-lg w-16 ${!product.available ? 'opacity-50' : ''}">
+            <button class="px-1 py-1 hover:bg-accent rounded-l-lg text-xs ${!product.available ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}" onclick="updateQuantity('${product.variantId}', -1)" ${!product.available ? 'disabled' : ''}>
+              -
+            </button>
+            <span class="px-2 py-1 border-x min-w-[2rem] text-center text-xs" id="qty-${product.variantId}">1</span>
+            <button class="px-1 py-1 hover:bg-accent rounded-r-lg text-xs ${!product.available ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}" onclick="updateQuantity('${product.variantId}', 1)" ${!product.available ? 'disabled' : ''}>
+              +
+            </button>
+          </div>
+          <button class="btn btn-sm ${product.available ? 'btn-primary' : 'bg-muted text-muted-foreground border-muted cursor-not-allowed opacity-50'}" onclick="addToCartFromSearch('${product.variantId}')" ${!product.available ? 'disabled' : ''}>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+            </svg>
+            ${product.available ? 'Add' : 'Out of Stock'}
+          </button>
+        </div>
+      </div>
+    `).join('');
+  }
+  
+  console.log('Setting display to block');
+  resultsDiv.style.display = 'block';
+  console.log('Display style after setting:', resultsDiv.style.display);
+  console.log('Container HTML length:', container.innerHTML.length);
+  
+  // Debug positioning
+  console.log('Results div position:', resultsDiv.getBoundingClientRect());
+  console.log('Results div z-index:', window.getComputedStyle(resultsDiv).zIndex);
+}
+
+function showSearchLoader() {
+  document.getElementById('search-loader').style.display = 'block';
+  document.getElementById('search-results').style.display = 'none';
+}
+
+function hideSearchLoader() {
+  document.getElementById('search-loader').style.display = 'none';
+}
+
+function hideSearchResults() {
+  document.getElementById('search-results').style.display = 'none';
+  document.getElementById('search-loader').style.display = 'none';
+}
+
+// Quantity management for search results
+const searchQuantities = {};
+
+function updateQuantity(variantId, change) {
+  const currentQty = searchQuantities[variantId] || 1;
+  const newQty = Math.max(1, currentQty + change);
+  searchQuantities[variantId] = newQty;
+  document.getElementById(`qty-${variantId}`).textContent = newQty;
+}
+
+function addToCartFromSearch(variantId) {
+  console.log('=== ADD TO CART DEBUG ===');
+  console.log('VariantId:', variantId);
+  console.log('Search results length:', searchResults.length);
+  console.log('Search results:', searchResults);
+  console.log('Cart items before:', cartItems);
+  
+  // Find the product in search results
+  const product = searchResults.find(p => p.variantId === variantId);
+  const quantity = searchQuantities[variantId] || 1;
+  
+  console.log('Found product:', product);
+  console.log('Quantity to add:', quantity);
+  
+  if (product) {
+    // Check if product is available
+    if (!product.available) {
+      alert('This product is out of stock and cannot be added to your shopping list.');
+      return;
+    }
+    
+    // Add to shopping list
+    console.log('Calling addToCart with:', product, quantity);
+    addToCart(product, quantity);
+    
+    // Reset quantity and hide search results
+    searchQuantities[variantId] = 1;
+    const qtyElement = document.getElementById(`qty-${variantId}`);
+    if (qtyElement) {
+      qtyElement.textContent = '1';
+    }
+    
+    // Clear search and hide results
+    hideSearchResults();
+    document.getElementById('search-input').value = '';
+    
+    // Show success feedback
+    showAddSuccess(product.title, quantity);
+    
+    console.log('Cart items after:', cartItems);
+  } else {
+    console.error('Product not found for variantId:', variantId);
+    console.error('Available variantIds:', searchResults.map(p => p.variantId));
+    console.error('Search results:', searchResults);
+    alert('Product not found. Please try searching again.');
+  }
+}
+
+function showAddSuccess(productTitle, quantity) {
+  // Create a temporary success message
+  const successDiv = document.createElement('div');
+  successDiv.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50';
+  successDiv.innerHTML = `
+    <div class="flex items-center gap-2">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+      <span>Added ${quantity}x ${productTitle} to shopping list</span>
+    </div>
+  `;
+  
+  document.body.appendChild(successDiv);
+  
+  // Remove after 3 seconds
+  setTimeout(() => {
+    if (successDiv.parentNode) {
+      successDiv.parentNode.removeChild(successDiv);
+    }
+  }, 3000);
+}
+
+// Cart management
+function addToCart(product, quantity = 1) {
+  console.log('=== ADD TO CART FUNCTION ===');
+  console.log('Adding product:', product);
+  console.log('Quantity:', quantity);
+  console.log('Current cart items:', cartItems);
+  
+  const existingItem = cartItems.find(item => item.variantId === product.variantId);
+  
+  if (existingItem) {
+    console.log('Found existing item, updating quantity');
+    existingItem.quantity += quantity;
+  } else {
+    console.log('Adding new item to cart');
+    cartItems.push({ ...product, quantity });
+  }
+  
+  console.log('Cart items after add:', cartItems);
+  updateCartDisplay();
+}
+
+function updateCartQuantity(variantId, quantity) {
+  if (quantity <= 0) {
+    removeFromCart(variantId);
+          return;
+        }
+        
+  const item = cartItems.find(item => item.variantId === variantId);
+  if (item) {
+    item.quantity = quantity;
+    updateCartDisplay();
+  }
+}
+
+function removeFromCart(variantId) {
+  cartItems = cartItems.filter(item => item.variantId !== variantId);
+  updateCartDisplay();
+}
+
+function updateCartDisplay() {
+  console.log('=== UPDATE CART DISPLAY ===');
+  console.log('Cart items:', cartItems);
+  console.log('Cart items length:', cartItems.length);
+  
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const totalValue = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  
+  console.log('Total items:', totalItems);
+  console.log('Total value:', totalValue);
+  
+  // Update summary
+  document.getElementById('total-items').textContent = `${totalItems} items`;
+  document.getElementById('total-value').textContent = totalValue.toFixed(2);
+  document.getElementById('summary-items').textContent = totalItems;
+  document.getElementById('summary-total').textContent = totalValue.toFixed(2);
+  
+  // Update buttons
+  const hasItems = cartItems.length > 0;
+  document.getElementById('export-btn').disabled = !hasItems;
+  document.getElementById('clear-btn').disabled = !hasItems;
+  document.getElementById('add-to-cart-btn').disabled = !hasItems;
+  
+  // Show/hide empty state
+  const emptyState = document.getElementById('empty-state');
+  const shoppingList = document.getElementById('shopping-list');
+  
+  if (hasItems) {
+    emptyState.style.display = 'none';
+    shoppingList.style.display = 'block';
+    
+    // Update cart items table
+    const tbody = document.getElementById('cart-items');
+    tbody.innerHTML = cartItems.map(item => `
+      <tr class="border-b hover:bg-accent/50 transition-colors">
+        <td class="py-4 px-2">
+          <div class="font-medium">${item.title}</div>
+        </td>
+        <td class="py-4 px-2">
+          <span class="badge badge-outline text-xs">${item.variant}</span>
+        </td>
+        <td class="py-4 px-2">
+          <code class="text-xs bg-muted px-2 py-1 rounded">${item.sku}</code>
+        </td>
+        <td class="py-4 px-2 text-right font-medium">$${item.price.toFixed(2)}</td>
+        <td class="py-4 px-2">
+          <div class="flex items-center justify-center">
+            <div class="flex items-center border rounded-lg w-20">
+              <button class="px-1 py-1 hover:bg-accent rounded-l-lg text-xs" onclick="updateCartQuantity('${item.variantId}', ${item.quantity - 1})" ${item.quantity <= 1 ? 'disabled' : ''}>
+                -
+              </button>
+              <input type="number" value="${item.quantity}" onchange="updateCartQuantity('${item.variantId}', parseInt(this.value))" class="border-0 text-center px-1 py-1 h-6 text-xs w-8 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" min="1">
+              <button class="px-1 py-1 hover:bg-accent rounded-r-lg text-xs" onclick="updateCartQuantity('${item.variantId}', ${item.quantity + 1})">
+                +
+              </button>
+            </div>
+          </div>
+        </td>
+        <td class="py-4 px-2">
+          <button class="group flex items-center gap-2 text-xs bg-muted px-2 py-1 rounded hover:bg-accent transition-colors cursor-pointer" onclick="copyToClipboard('${item.variantId}')" title="Click to copy variant ID">
+            <code class="font-mono">${item.variantId}</code>
+            <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+          </button>
+        </td>
+        <td class="py-4 px-2">
+          <div class="flex justify-center">
+            <button class="btn btn-ghost btn-sm text-destructive hover:text-destructive hover:bg-destructive/10" onclick="removeFromCart('${item.variantId}')">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+              </svg>
+            </button>
+          </div>
+        </td>
+      </tr>
+    `).join('');
+          } else {
+    emptyState.style.display = 'block';
+    shoppingList.style.display = 'none';
+  }
+}
+
+// Utility functions
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    // You could add a toast notification here
+    console.log('Variant ID copied to clipboard');
+  });
+}
+
+function clearAll() {
+  cartItems = [];
+  updateCartDisplay();
+}
+
+      async function addToShopifyCart() {
+        console.log('=== ADDING TO SHOPIFY CART ===');
+        console.log('Cart items to add:', cartItems);
+        
+        if (cartItems.length === 0) {
+          alert('No items to add to cart');
+          return;
+        }
+        
+        try {
+          console.log('Adding items to Shopify cart...');
+          
+          // Add items one by one to ensure compatibility
+          for (const item of cartItems) {
+            const cartData = {
+              items: [{
+                id: parseInt(item.variantId),
+                quantity: item.quantity
+              }]
+            };
+            
+            console.log(`Adding item: ${item.title} (${item.variant}) - Qty: ${item.quantity}`);
+            
+            const response = await fetch('/cart/add.js', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(cartData)
+            });
+            
+            if (!response.ok) {
+              const errorText = await response.text();
+              console.error(`Failed to add item ${item.title}:`, errorText);
+              throw new Error(`Failed to add ${item.title}: ${response.status}`);
+            }
+            
+            const result = await response.json();
+            console.log(`Successfully added ${item.title}:`, result);
+          }
+          
+          // Show success message
+          const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+          const totalValue = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+          
+          alert(`Successfully added ${totalItems} items to your cart ($${totalValue.toFixed(2)})`);
+          
+          // Redirect to cart page
+          window.location.href = '/cart';
+          
+        } catch (error) {
+          console.error('Error adding to Shopify cart:', error);
+          alert(`Error adding items to cart: ${error.message}. Please try again.`);
+        }
+      }
+
+function exportCSV() {
+        if (cartItems.length === 0) {
+    alert('No items to export');
+          return;
+        }
+        
+  const headers = ['Product Title', 'Variant', 'SKU', 'Price', 'Quantity', 'Variant ID'];
+        const csvContent = [
+          headers.join(','),
+    ...cartItems.map(item => [
+            `"${item.title.replace(/"/g, '""')}"`,
+      `"${item.variant.replace(/"/g, '""')}"`,
+      `"${item.sku}"`,
+      item.price.toString(),
+      item.quantity.toString(),
+      `"${item.variantId}"`
+          ].join(','))
+        ].join('\n');
+
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+        link.setAttribute('href', url);
+  link.setAttribute('download', `shopping-list-${new Date().toISOString().split('T')[0]}.csv`);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+function importCSV() {
+  document.getElementById('csv-input').click();
+}
+
+function handleFileImport(event) {
+  const file = event.target.files?.[0];
+  if (!file) return;
+
+  if (file.type !== 'text/csv' && !file.name.endsWith('.csv')) {
+    alert('Please select a CSV file');
+    return;
+  }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          try {
+            const csv = e.target.result;
+      const lines = csv.split('\n').filter(line => line.trim());
+      
+      if (lines.length < 2) {
+        alert('CSV file appears to be empty or invalid');
+        return;
+      }
+
+      const headers = lines[0].split(',').map(h => h.replace(/"/g, '').trim());
+      const expectedHeaders = ['Product Title', 'Variant', 'SKU', 'Price', 'Quantity', 'Variant ID'];
+      
+      const hasAllHeaders = expectedHeaders.every(expected => 
+        headers.some(header => header.toLowerCase() === expected.toLowerCase())
+      );
+
+      if (!hasAllHeaders) {
+        alert('CSV file must contain columns: Product Title, Variant, SKU, Price, Quantity, Variant ID');
+        return;
+      }
+
+      const importedItems = [];
+      
+      for (let i = 1; i < lines.length; i++) {
+        const values = lines[i].split(',').map(v => v.replace(/"/g, '').trim());
+        
+        if (values.length !== headers.length) {
+          console.warn(`Skipping row ${i + 1}: incorrect number of columns`);
+          continue;
+        }
+
+        try {
+          const getValueByHeader = (headerName) => {
+            const index = headers.findIndex(h => h.toLowerCase() === headerName.toLowerCase());
+            return index >= 0 ? values[index] : '';
+          };
+
+          const title = getValueByHeader('Product Title');
+          const variant = getValueByHeader('Variant');
+          const sku = getValueByHeader('SKU');
+          const price = parseFloat(getValueByHeader('Price'));
+          const quantity = parseInt(getValueByHeader('Quantity'));
+          const variantId = getValueByHeader('Variant ID');
+
+          if (!title || !variant || !sku || isNaN(price) || isNaN(quantity) || !variantId) {
+            console.warn(`Skipping row ${i + 1}: missing or invalid data`);
+            continue;
+          }
+
+          importedItems.push({
+            id: `imported-${i}`,
+            title,
+            variant,
+            sku,
+            price,
+            quantity,
+            variantId
+          });
+        } catch (error) {
+          console.warn(`Error parsing row ${i + 1}:`, error);
+        }
+      }
+
+      if (importedItems.length === 0) {
+        alert('No valid items found in CSV file');
+        return;
+      }
+
+      cartItems = importedItems;
+      updateCartDisplay();
+      alert(`Successfully imported ${importedItems.length} items`);
+      
+    } catch (error) {
+      alert('Error reading CSV file');
+      console.error('CSV import error:', error);
+    }
+  };
+
+  reader.readAsText(file);
+  event.target.value = ''; // Reset file input
+}
+
+// Click outside to hide search results
+document.addEventListener('click', function(e) {
+  const searchResults = document.getElementById('search-results');
+  const searchInput = document.getElementById('search-input');
+  
+  if (!searchResults.contains(e.target) && !searchInput.contains(e.target)) {
+    hideSearchResults();
+  }
+});
+
+// Test function to debug API issues
+async function testAPIs() {
+  console.log('Testing APIs...');
+  
+  const apis = [
+    '/search/suggest.json?q=test&resources[type]=product&resources[limit]=5',
+    '/search?q=test&type=product&view=json',
+    '/products.json?limit=5'
+  ];
+  
+  for (let i = 0; i < apis.length; i++) {
+    const api = apis[i];
+    try {
+      console.log(`Testing API ${i + 1}: ${api}`);
+      const response = await fetch(api);
+      console.log(`API ${i + 1} status:`, response.status);
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log(`API ${i + 1} data:`, data);
+      } else {
+        console.log(`API ${i + 1} failed:`, response.statusText);
+      }
+    } catch (error) {
+      console.log(`API ${i + 1} error:`, error);
+    }
+  }
+}
+
+// Test function to debug cart functionality
+function testCart() {
+  console.log('=== TESTING CART ===');
+  console.log('Cart items before test:', cartItems);
+  
+  const testProduct = {
+    id: 'test-1',
+    title: 'Test Product',
+    variant: 'Test Variant',
+    sku: 'TEST-001',
+    price: 10.00,
+    variantId: 'test-variant-1',
+    handle: 'test-product',
+    available: true
+  };
+  
+  addToCart(testProduct, 1);
+  
+  console.log('Cart items after test:', cartItems);
+}
+
+// Toggle instructions dropdown
+function toggleInstructions() {
+  const content = document.getElementById('instructions-content');
+  const icon = document.getElementById('instructions-icon');
+  
+  if (content.classList.contains('hidden')) {
+    content.classList.remove('hidden');
+    icon.style.transform = 'rotate(180deg)';
+  } else {
+    content.classList.add('hidden');
+    icon.style.transform = 'rotate(0deg)';
+  }
+}
+
+// Initialize
+loadShopifyProducts().then(() => {
+  updateCartDisplay();
+    });
+  </script>
+
+{% schema %}
+  {
+    "name": "Cart Builder",
+    "target": "section",
+    "settings": [
+      { "type": "product", "id": "product", "label": "product", "autofill": true },
+      { "type": "color", "id": "colour", "label": "Star Colour", "default": "#ff0000" }
+    ]
+  }
+  {% endschema %}
+  
