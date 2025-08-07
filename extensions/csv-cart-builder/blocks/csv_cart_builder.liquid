@@ -54,176 +54,158 @@
   --spacing-12: 3rem;
 }
 
-/* Base styles */
-* {
+/* Base styles - scoped to cart builder only */
+.cart-builder-container * {
   box-sizing: border-box;
-  border-color: var(--border);
-  outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: var(--font-size);
-  line-height: 1.5;
-  color: var(--foreground);
-  background: var(--background);
-}
+/* Utility classes - scoped to cart builder */
+.cart-builder-container .w-full { width: 100%; }
+.cart-builder-container .max-w-6xl { max-width: 72rem; }
+.cart-builder-container .mx-auto { margin-left: auto; margin-right: auto; }
+.cart-builder-container .p-6 { padding: 1.5rem; }
+.cart-builder-container .space-y-8 > * + * { margin-top: 2rem; }
+.cart-builder-container .text-center { text-align: center; }
+.cart-builder-container .space-y-4 > * + * { margin-top: 1rem; }
+.cart-builder-container .text-3xl { font-size: 1.875rem; }
+.cart-builder-container .font-semibold { font-weight: 600; }
+.cart-builder-container .text-foreground { color: #000; }
+.cart-builder-container .text-muted-foreground { color: #666; }
+.cart-builder-container .max-w-2xl { max-width: 42rem; }
+.cart-builder-container .relative { position: relative; margin-bottom: 20px;}
+.cart-builder-container .absolute { position: absolute; }
+.cart-builder-container .top-full { top: 100%; }
+.cart-builder-container .left-0 { left: 0; }
+.cart-builder-container .right-0 { right: 0; }
+.cart-builder-container .mt-2 { margin-top: 0.5rem; }
+.cart-builder-container .z-50 { z-index: 50; }
+.cart-builder-container .max-h-96 { max-height: 24rem; }
+.cart-builder-container .overflow-y-auto { overflow-y: auto; }
+.cart-builder-container .p-2 { padding: 0.5rem; }
+.cart-builder-container .flex { display: flex; }
+.cart-builder-container .items-center { align-items: center; }
+.cart-builder-container .justify-between { justify-content: space-between; }
+.cart-builder-container .p-3 { padding: 0.75rem; }
+.cart-builder-container .hover\:bg-accent:hover { background-color: #f3f4f6; }
+.cart-builder-container .rounded-lg { border-radius: 0.5rem; }
+.cart-builder-container .transition-colors { transition: color 0.15s ease-in-out; }
+.cart-builder-container .flex-1 { flex: 1 1 0%; }
+.cart-builder-container .space-y-1 > * + * { margin-top: 0.25rem; }
+.cart-builder-container .gap-2 { gap: 0.5rem; }
+.cart-builder-container .font-medium { font-weight: 500; }
+.cart-builder-container .text-xs { font-size: 0.75rem; }
+.cart-builder-container .gap-4 { gap: 1rem; }
+.cart-builder-container .text-sm { font-size: 0.875rem; }
+.cart-builder-container .border { border: 1px solid #d1d5db; }
+.cart-builder-container .rounded-lg { border-radius: 0.5rem; }
+.cart-builder-container .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.cart-builder-container .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.cart-builder-container .hover\:bg-accent:hover { background-color: #f3f4f6; }
+.cart-builder-container .rounded-l-lg { border-top-left-radius: 0.5rem; border-bottom-left-radius: 0.5rem; }
+.cart-builder-container .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.cart-builder-container .min-w-\[3rem\] { min-width: 3rem; }
+.cart-builder-container .text-center { text-align: center; }
+.cart-builder-container .border-x { border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; }
+.cart-builder-container .rounded-r-lg { border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; }
+.cart-builder-container .gap-1 { gap: 0.25rem; }
+.cart-builder-container .w-3 { width: 0.75rem; }
+.cart-builder-container .h-3 { height: 0.75rem; }
+.cart-builder-container .w-4 { width: 1rem; }
+.cart-builder-container .h-4 { height: 1rem; }
+.cart-builder-container .gap-4 { gap: 1rem; }
+.cart-builder-container .overflow-x-auto { overflow-x: auto; }
+.cart-builder-container .w-full { width: 100%; }
+.cart-builder-container .border-b { border-bottom: 1px solid #d1d5db; }
+.cart-builder-container .text-left { text-align: left; }
+.cart-builder-container .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+.cart-builder-container .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.cart-builder-container .font-medium { font-weight: 500; }
+.cart-builder-container .text-right { text-align: right; }
+.cart-builder-container .text-center { text-align: center; }
+.cart-builder-container .hover\:bg-accent\/50:hover { background-color: rgba(243, 244, 246, 0.5); }
+.cart-builder-container .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.cart-builder-container .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.cart-builder-container .rounded { border-radius: 0.25rem; }
+.cart-builder-container .font-mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; }
+.cart-builder-container .w-24 { width: 6rem; }
+.cart-builder-container .border-0 { border: 0; }
+.cart-builder-container .h-8 { height: 2rem; }
+.cart-builder-container .group { }
+.cart-builder-container .group:hover .group-hover\:opacity-100 { opacity: 1; }
+.cart-builder-container .opacity-0 { opacity: 0; }
+.cart-builder-container .transition-opacity { transition: opacity 0.15s ease-in-out; }
+.cart-builder-container .justify-center { justify-content: center; }
+.cart-builder-container .text-destructive { color: #dc2626; }
+.cart-builder-container .hover\:text-destructive:hover { color: #dc2626; }
+.cart-builder-container .hover\:bg-destructive\/10:hover { background-color: rgba(220, 38, 38, 0.1); }
+.cart-builder-container .pt-4 { padding-top: 1rem; }
+.cart-builder-container .mt-4 { margin-top: 1rem; }
+.cart-builder-container .border-t { border-top: 1px solid #d1d5db; }
+.cart-builder-container .font-semibold { font-weight: 600; }
+.cart-builder-container .text-lg { font-size: 1.125rem; }
+.cart-builder-container .disabled\:opacity-50:disabled { opacity: 0.5; }
+.cart-builder-container .disabled\:cursor-not-allowed:disabled { cursor: not-allowed; }
+.cart-builder-container .disabled\:bg-muted:disabled { background-color: #f3f4f6; }
+.cart-builder-container .disabled\:text-muted-foreground:disabled { color: #666; }
+.cart-builder-container .disabled\:border-muted:disabled { border-color: #f3f4f6; }
 
-html {
-  font-size: var(--font-size);
-}
-
-/* Utility classes */
-.w-full { width: 100%; }
-.max-w-6xl { max-width: 72rem; }
-.mx-auto { margin-left: auto; margin-right: auto; }
-.p-6 { padding: var(--spacing-6); }
-.space-y-8 > * + * { margin-top: var(--spacing-8); }
-.text-center { text-align: center; }
-.space-y-4 > * + * { margin-top: var(--spacing-4); }
-.text-3xl { font-size: 1.875rem; }
-.font-semibold { font-weight: 600; }
-.text-foreground { color: var(--foreground); }
-.text-muted-foreground { color: var(--muted-foreground); }
-.max-w-2xl { max-width: 42rem; }
-.relative { position: relative; }
-.absolute { position: absolute; }
-.top-full { top: 100%; }
-.left-0 { left: 0; }
-.right-0 { right: 0; }
-.mt-2 { margin-top: var(--spacing-2); }
-.z-50 { z-index: 50; }
-.max-h-96 { max-height: 24rem; }
-.overflow-y-auto { overflow-y: auto; }
-.p-2 { padding: var(--spacing-2); }
-.flex { display: flex; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.p-3 { padding: var(--spacing-3); }
-.hover\:bg-accent:hover { background-color: var(--accent); }
-.rounded-lg { border-radius: var(--radius); }
-.transition-colors { transition: color 0.15s ease-in-out; }
-.flex-1 { flex: 1 1 0%; }
-.space-y-1 > * + * { margin-top: var(--spacing-1); }
-.gap-2 { gap: var(--spacing-2); }
-.font-medium { font-weight: 500; }
-.text-xs { font-size: var(--text-xs); }
-.gap-4 { gap: var(--spacing-4); }
-.text-sm { font-size: var(--text-sm); }
-.border { border: 1px solid var(--border); }
-.rounded-lg { border-radius: var(--radius); }
-.px-2 { padding-left: var(--spacing-2); padding-right: var(--spacing-2); }
-.py-1 { padding-top: var(--spacing-1); padding-bottom: var(--spacing-1); }
-.hover\:bg-accent:hover { background-color: var(--accent); }
-.rounded-l-lg { border-top-left-radius: var(--radius); border-bottom-left-radius: var(--radius); }
-.px-3 { padding-left: var(--spacing-3); padding-right: var(--spacing-3); }
-.min-w-\[3rem\] { min-width: 3rem; }
-.text-center { text-align: center; }
-.border-x { border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
-.rounded-r-lg { border-top-right-radius: var(--radius); border-bottom-right-radius: var(--radius); }
-.gap-1 { gap: var(--spacing-1); }
-.w-3 { width: 0.75rem; }
-.h-3 { height: 0.75rem; }
-.w-4 { width: 1rem; }
-.h-4 { height: 1rem; }
-.gap-4 { gap: var(--spacing-4); }
-.overflow-x-auto { overflow-x: auto; }
-.w-full { width: 100%; }
-.border-b { border-bottom: 1px solid var(--border); }
-.text-left { text-align: left; }
-.py-3 { padding-top: var(--spacing-3); padding-bottom: var(--spacing-3); }
-.px-2 { padding-left: var(--spacing-2); padding-right: var(--spacing-2); }
-.font-medium { font-weight: 500; }
-.text-right { text-align: right; }
-.text-center { text-align: center; }
-.hover\:bg-accent\/50:hover { background-color: rgba(233, 235, 239, 0.5); }
-.py-4 { padding-top: var(--spacing-4); padding-bottom: var(--spacing-4); }
-/* .bg-muted { background-color: var(--muted); } */
-.px-2 { padding-left: var(--spacing-2); padding-right: var(--spacing-2); }
-.rounded { border-radius: 0.25rem; }
-.font-mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; }
-.w-24 { width: 6rem; }
-.border-0 { border: 0; }
-.h-8 { height: 2rem; }
-.\[appearance\:textfield\] { appearance: textfield; }
-.\[&::-webkit-outer-spin-button\]\:appearance-none::-webkit-outer-spin-button { appearance: none; }
-.\[&::-webkit-inner-spin-button\]\:appearance-none::-webkit-inner-spin-button { appearance: none; }
-.group { }
-.group:hover .group-hover\:opacity-100 { opacity: 1; }
-.opacity-0 { opacity: 0; }
-.transition-opacity { transition: opacity 0.15s ease-in-out; }
-.justify-center { justify-content: center; }
-.text-destructive { color: var(--destructive); }
-.hover\:text-destructive:hover { color: var(--destructive); }
-.hover\:bg-destructive\/10:hover { background-color: rgba(212, 24, 61, 0.1); }
-.pt-4 { padding-top: var(--spacing-4); }
-.mt-4 { margin-top: var(--spacing-4); }
-.border-t { border-top: 1px solid var(--border); }
-.font-semibold { font-weight: 600; }
-.text-lg { font-size: var(--text-lg); }
-.disabled\:opacity-50:disabled { opacity: 0.5; }
-.disabled\:cursor-not-allowed:disabled { cursor: not-allowed; }
-.disabled\:bg-muted:disabled { background-color: var(--muted); }
-.disabled\:text-muted-foreground:disabled { color: var(--muted-foreground); }
-.disabled\:border-muted:disabled { border-color: var(--muted); }
-
-/* Button styles */
-.btn {
+/* Button styles - scoped to cart builder */
+.cart-builder-container .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius);
-  font-weight: var(--font-weight-medium);
+  border-radius: 0.375rem;
+  font-weight: 500;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
   border: none;
-  padding: var(--spacing-2) var(--spacing-4);
-  font-size: var(--font-size);
+  padding: 0.5rem 1rem;
+  font-size: 14px;
   line-height: 1.5;
 }
 
-.btn-primary {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+.cart-builder-container .btn-primary {
+  background-color: #000;
+  color: #fff;
 }
 
-.btn-primary:hover {
-  background-color: var(--primary);
+.cart-builder-container .btn-primary:hover {
+  background-color: #000;
   opacity: 0.9;
 }
 
-.btn-secondary {
-  background-color: var(--secondary);
-  color: var(--secondary-foreground);
-  border: 1px solid var(--border);
+.cart-builder-container .btn-secondary {
+  background-color: #f3f4f6;
+  color: #000;
+  border: 1px solid #d1d5db;
 }
 
-.btn-secondary:hover {
-  background-color: var(--accent);
+.cart-builder-container .btn-secondary:hover {
+  background-color: #e5e7eb;
 }
 
-.btn-sm {
-  padding: var(--spacing-1) var(--spacing-2);
-  font-size: var(--text-sm);
+.cart-builder-container .btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
 }
 
-.btn-outline {
+.cart-builder-container .btn-outline {
   background-color: transparent;
-  border: 1px solid var(--border);
-  color: var(--foreground);
+  border: 1px solid #d1d5db;
+  color: #000;
 }
 
-.btn-outline:hover {
-  background-color: var(--accent);
+.cart-builder-container .btn-outline:hover {
+  background-color: #f3f4f6;
 }
 
-.btn-ghost {
+.cart-builder-container .btn-ghost {
   background-color: transparent;
-  color: var(--foreground);
+  color: #000;
 }
 
-.btn-ghost:hover {
-  background-color: var(--accent);
+.cart-builder-container .btn-ghost:hover {
+  background-color: #f3f4f6;
 }
 
 /* Input styles */
@@ -293,18 +275,60 @@ html {
 .table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.875rem;
 }
 
 .table th,
 .table td {
-  padding: var(--spacing-3) var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-1);
   text-align: left;
   border-bottom: 1px solid var(--border);
+  vertical-align: middle;
 }
 
 .table th {
   font-weight: var(--font-weight-medium);
   color: var(--muted-foreground);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Compact table for better fit */
+.table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
+}
+
+.table td:first-child {
+  max-width: 250px;
+  white-space: normal;
+}
+
+.table td:nth-child(2) {
+  max-width: 150px;
+}
+
+.table td:nth-child(3) {
+  max-width: 100px;
+}
+
+.table td:nth-child(4) {
+  max-width: 100px;
+}
+
+.table td:nth-child(5) {
+  max-width: 100px;
+}
+
+.table td:nth-child(6) {
+  max-width: 150px;
+}
+
+.table td:last-child {
+  max-width: 80px;
 }
 
 /* Search icon */
@@ -342,7 +366,7 @@ html {
 }
 </style>
 
-<div class="w-full max-w-6xl mx-auto p-6 space-y-8">
+<div class="cart-builder-container w-full max-w-6xl mx-auto p-6 space-y-8">
   <!-- Header Section -->
   <div class="text-center space-y-4">
     <h1 class="text-3xl font-semibold text-foreground">
@@ -354,7 +378,7 @@ html {
     </p>
     
     <!-- Instructions for First-Time Users -->
-    <div class="max-w-4xl mx-auto" style="background-color: transparent !important;">
+    <div class="max-w-4xl mx-auto" style="background-color: transparent !important; margin-bottom: 20px;">
       <div class="border-b border-black" style="background-color: transparent !important;">
         <button class="w-full p-4 text-left flex items-center justify-between transition-colors" onclick="toggleInstructions()" style="background-color: transparent !important; border: none; outline: none;">
           <h2 class="text-lg font-semibold text-foreground">Get Started</h2>
@@ -888,12 +912,12 @@ function showSearchResults(products) {
         </div>
         
         <div class="flex items-center gap-2">
-          <div class="flex items-center border rounded-lg w-16 ${!product.available ? 'opacity-50' : ''}">
-            <button class="px-1 py-1 hover:bg-accent rounded-l-lg text-xs ${!product.available ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}" onclick="updateQuantity('${product.variantId}', -1)" ${!product.available ? 'disabled' : ''}>
+          <div class="flex items-center border rounded" style="width: 52px; height: 24px; ${!product.available ? 'opacity: 0.5;' : ''}">
+            <button style="width: 16px; height: 24px; border: none; background: transparent; cursor: pointer; font-size: 12px; ${!product.available ? 'opacity: 0.5; cursor: not-allowed;' : ''}" onclick="updateQuantity('${product.variantId}', -1)" ${!product.available ? 'disabled' : ''}>
               -
             </button>
-            <span class="px-2 py-1 border-x min-w-[2rem] text-center text-xs" id="qty-${product.variantId}">1</span>
-            <button class="px-1 py-1 hover:bg-accent rounded-r-lg text-xs ${!product.available ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}" onclick="updateQuantity('${product.variantId}', 1)" ${!product.available ? 'disabled' : ''}>
+            <span style="width: 20px; height: 24px; border-left: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; font-size: 12px; line-height: 24px;" id="qty-${product.variantId}">1</span>
+            <button style="width: 16px; height: 24px; border: none; background: transparent; cursor: pointer; font-size: 12px; ${!product.available ? 'opacity: 0.5; cursor: not-allowed;' : ''}" onclick="updateQuantity('${product.variantId}', 1)" ${!product.available ? 'disabled' : ''}>
               +
             </button>
           </div>
@@ -1099,21 +1123,21 @@ function updateCartDisplay() {
         <td class="py-4 px-2 text-right font-medium">$${item.price.toFixed(2)}</td>
         <td class="py-4 px-2">
           <div class="flex items-center justify-center">
-            <div class="flex items-center border rounded-lg w-20">
-              <button class="px-1 py-1 hover:bg-accent rounded-l-lg text-xs" onclick="updateCartQuantity('${item.variantId}', ${item.quantity - 1})" ${item.quantity <= 1 ? 'disabled' : ''}>
+            <div class="flex items-center border rounded" style="width: 52px; height: 24px;">
+              <button style="width: 16px; height: 24px; border: none; background: transparent; cursor: pointer; font-size: 12px;" onclick="updateCartQuantity('${item.variantId}', ${item.quantity - 1})" ${item.quantity <= 1 ? 'disabled' : ''}>
                 -
               </button>
-              <input type="number" value="${item.quantity}" onchange="updateCartQuantity('${item.variantId}', parseInt(this.value))" class="border-0 text-center px-1 py-1 h-6 text-xs w-8 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" min="1">
-              <button class="px-1 py-1 hover:bg-accent rounded-r-lg text-xs" onclick="updateCartQuantity('${item.variantId}', ${item.quantity + 1})">
+              <span style="width: 20px; height: 24px; border-left: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; font-size: 12px; line-height: 24px; display: flex; align-items: center; justify-content: center;">${item.quantity}</span>
+              <button style="width: 16px; height: 24px; border: none; background: transparent; cursor: pointer; font-size: 12px;" onclick="updateCartQuantity('${item.variantId}', ${item.quantity + 1})">
                 +
               </button>
             </div>
           </div>
         </td>
         <td class="py-4 px-2">
-          <button class="group flex items-center gap-2 text-xs bg-muted px-2 py-1 rounded hover:bg-accent transition-colors cursor-pointer" onclick="copyToClipboard('${item.variantId}')" title="Click to copy variant ID">
-            <code class="font-mono">${item.variantId}</code>
-            <svg class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button class="group flex items-center gap-1 text-xs bg-muted px-1.5 py-0.5 rounded hover:bg-accent transition-colors cursor-pointer" onclick="copyToClipboard('${item.variantId}')" title="Click to copy variant ID">
+            <code class="font-mono text-xs">${item.variantId}</code>
+            <svg class="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
             </svg>
           </button>

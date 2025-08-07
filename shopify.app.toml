@@ -3,7 +3,7 @@
 client_id = "ab818f3823c4c0764c84eb1e6eb1a2da"
 name = "csv-cart-builder"
 handle = "csv-cart-builder"
-application_url = "https://realize-organization-shopper-spin.trycloudflare.com"
+application_url = "https://went-imaging-eye-showing.trycloudflare.com"
 embedded = true
 
 [build]
@@ -26,7 +26,7 @@ api_version = "2025-07"
 scopes = "write_products"
 
 [auth]
-redirect_urls = ["https://realize-organization-shopper-spin.trycloudflare.com/auth/callback", "https://realize-organization-shopper-spin.trycloudflare.com/auth/shopify/callback", "https://realize-organization-shopper-spin.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://went-imaging-eye-showing.trycloudflare.com/auth/callback", "https://went-imaging-eye-showing.trycloudflare.com/auth/shopify/callback", "https://went-imaging-eye-showing.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false
