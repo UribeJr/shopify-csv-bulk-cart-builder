@@ -102,7 +102,7 @@
 .cart-builder-container .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
 .cart-builder-container .hover\:bg-accent:hover { background-color: #f3f4f6; }
 .cart-builder-container .rounded-l-lg { border-top-left-radius: 0.5rem; border-bottom-left-radius: 0.5rem; }
-.cart-builder-container .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.cart-builder-container .px-3 { padding-left: 3rem; padding-right: 3rem; }
 .cart-builder-container .min-w-\[3rem\] { min-width: 3rem; }
 .cart-builder-container .text-center { text-align: center; }
 .cart-builder-container .border-x { border-left: 1px solid #d1d5db; border-right: 1px solid #d1d5db; }
@@ -353,6 +353,166 @@
   animation: spin 1s linear infinite;
 }
 
+/* Text size variants */
+.cart-builder-container.text-size-small {
+  --font-size: 14px;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+}
+
+.cart-builder-container.text-size-medium {
+  --font-size: 18px;
+  --text-xs: 1rem;
+  --text-sm: 1.125rem;
+  --text-base: 1.25rem;
+  --text-lg: 1.5rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 3rem;
+  --text-5xl: 3.75rem;
+  --text-6xl: 4.5rem;
+}
+
+.cart-builder-container.text-size-large {
+  --font-size: 22px;
+  --text-xs: 1.25rem;
+  --text-sm: 1.375rem;
+  --text-base: 1.5rem;
+  --text-lg: 1.75rem;
+  --text-xl: 2rem;
+  --text-2xl: 2.5rem;
+  --text-3xl: 3rem;
+  --text-4xl: 3.5rem;
+  --text-5xl: 4.25rem;
+  --text-6xl: 5rem;
+}
+
+/* Override utility classes with text size variants */
+.cart-builder-container.text-size-medium .text-xs { font-size: var(--text-xs) !important; }
+.cart-builder-container.text-size-medium .text-sm { font-size: var(--text-sm) !important; }
+.cart-builder-container.text-size-medium .text-base { font-size: var(--text-base) !important; }
+.cart-builder-container.text-size-medium .text-lg { font-size: var(--text-lg) !important; }
+.cart-builder-container.text-size-medium .text-xl { font-size: var(--text-xl) !important; }
+.cart-builder-container.text-size-medium .text-2xl { font-size: var(--text-2xl) !important; }
+.cart-builder-container.text-size-medium .text-3xl { font-size: var(--text-3xl) !important; }
+.cart-builder-container.text-size-medium .text-4xl { font-size: var(--text-4xl) !important; }
+.cart-builder-container.text-size-medium .text-5xl { font-size: var(--text-5xl) !important; }
+.cart-builder-container.text-size-medium .text-6xl { font-size: var(--text-6xl) !important; }
+
+.cart-builder-container.text-size-large .text-xs { font-size: var(--text-xs) !important; }
+.cart-builder-container.text-size-large .text-sm { font-size: var(--text-sm) !important; }
+.cart-builder-container.text-size-large .text-base { font-size: var(--text-base) !important; }
+.cart-builder-container.text-size-large .text-lg { font-size: var(--text-lg) !important; }
+.cart-builder-container.text-size-large .text-xl { font-size: var(--text-xl) !important; }
+.cart-builder-container.text-size-large .text-2xl { font-size: var(--text-2xl) !important; }
+.cart-builder-container.text-size-large .text-3xl { font-size: var(--text-3xl) !important; }
+.cart-builder-container.text-size-large .text-4xl { font-size: var(--text-4xl) !important; }
+.cart-builder-container.text-size-large .text-5xl { font-size: var(--text-5xl) !important; }
+.cart-builder-container.text-size-large .text-6xl { font-size: var(--text-6xl) !important; }
+
+/* Override specific elements that need font size adjustments */
+.cart-builder-container.text-size-medium .btn { font-size: var(--font-size) !important; }
+.cart-builder-container.text-size-medium .btn-sm { font-size: var(--text-sm) !important; }
+.cart-builder-container.text-size-medium .input { font-size: var(--font-size) !important; }
+.cart-builder-container.text-size-medium .card-title { font-size: var(--text-lg) !important; }
+.cart-builder-container.text-size-medium .table { font-size: var(--text-sm) !important; }
+.cart-builder-container.text-size-medium .table th { font-size: var(--text-xs) !important; }
+.cart-builder-container.text-size-medium .badge { font-size: var(--text-xs) !important; }
+
+.cart-builder-container.text-size-large .btn { font-size: var(--font-size) !important; }
+.cart-builder-container.text-size-large .btn-sm { font-size: var(--text-sm) !important; }
+.cart-builder-container.text-size-large .input { font-size: var(--font-size) !important; }
+.cart-builder-container.text-size-large .card-title { font-size: var(--text-lg) !important; }
+.cart-builder-container.text-size-large .table { font-size: var(--text-sm) !important; }
+.cart-builder-container.text-size-large .table th { font-size: var(--text-xs) !important; }
+.cart-builder-container.text-size-large .badge { font-size: var(--text-xs) !important; }
+
+/* Highlight style for out-of-stock rows in the shopping list */
+.oos-highlight {
+  background-color: #fff1f2; /* rose-50 */
+  position: relative;
+}
+.oos-highlight::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #ef4444; /* red-500 */
+}
+
+/* Modal specific styles */
+#variant-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 9999 !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  display: none !important; /* Hidden by default */
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#variant-modal.show {
+  display: flex !important;
+}
+
+/* Override any inline styles */
+#variant-modal[style*="display: none"] {
+  display: none !important;
+}
+
+#variant-modal.show[style*="display: none"] {
+  display: flex !important;
+}
+
+#variant-modal .bg-white {
+  position: relative !important;
+  z-index: 10000 !important;
+  max-height: 80vh !important;
+  overflow-y: auto !important;
+}
+
+/* Ensure modal content is properly styled */
+#variant-modal .bg-white * {
+  box-sizing: border-box !important;
+}
+
+/* Override any conflicting button styles */
+#variant-modal .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.5rem 1.5rem !important;
+  font-weight: 500 !important;
+  border-radius: 0.375rem !important;
+  transition: all 0.2s !important;
+  text-decoration: none !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+#variant-modal .btn-primary {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+#variant-modal .btn-primary:hover {
+  background-color: #2563eb !important;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .p-6 { padding: var(--spacing-4); }
@@ -366,7 +526,7 @@
 }
 </style>
 
-<div class="cart-builder-container w-full max-w-6xl mx-auto p-6 space-y-8">
+<div class="cart-builder-container w-full max-w-6xl mx-auto p-6 space-y-8 text-size-{{ block.settings.text_size | default: 'small' }}">
   <!-- Header Section -->
   <div class="text-center space-y-4">
     <h1 class="text-3xl font-semibold text-foreground">
@@ -381,7 +541,7 @@
     <div class="max-w-4xl mx-auto" style="background-color: transparent !important; margin-bottom: 20px;">
       <div class="border-b border-black" style="background-color: transparent !important;">
         <button class="w-full p-4 text-left flex items-center justify-between transition-colors" onclick="toggleInstructions()" style="background-color: transparent !important; border: none; outline: none;">
-          <h2 class="text-lg font-semibold text-foreground">Get Started</h2>
+          <h2 class="text-lg font-semibold text-foreground">Get Started [FPO]</h2>
           <svg id="instructions-icon" class="w-4 h-4 text-muted-foreground transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 9l6 6 6-6"></path>
           </svg>
@@ -410,15 +570,15 @@
                 Click "Import CSV" to bulk add products. Your CSV file must include these columns:
               </p>
               <ul class="text-sm text-muted-foreground ml-4 mt-1 space-y-1">
-                <li>• <strong>Product Title</strong> - The name of the product</li>
-                <li>• <strong>Variant</strong> - The specific variant (e.g., "Large", "Red")</li>
-                <li>• <strong>SKU</strong> - Stock keeping unit</li>
+                <li>• <strong>Product Title</strong> - The exact name of the product</li>
+                <li>• <strong>Variant</strong> - The specific variant (e.g., "Large", "Red", "Default Title")</li>
+                <li>• <strong>SKU</strong> - Stock keeping unit (recommended for accurate matching)</li>
                 <li>• <strong>Price</strong> - Product price (numbers only)</li>
                 <li>• <strong>Quantity</strong> - How many to add (numbers only)</li>
-                <li>• <strong>Variant ID</strong> - <span class="text-destructive font-medium">REQUIRED</span> - The exact Shopify variant ID</li>
               </ul>
-              <p class="text-sm text-destructive mt-2">
-                <strong>Important:</strong> The Variant ID is crucial for the import to work correctly. You can find this ID in your Shopify admin or by copying it from the shopping list after adding items manually.
+              <p class="text-sm text-muted-foreground mt-2">
+                <strong>Tip:</strong> Including the SKU will ensure the most accurate product matching. 
+                If a product isn't found, try searching for it manually first to see the exact title and variant names.
               </p>
             </div>
             
@@ -460,6 +620,7 @@
     {% comment %} <div class="mt-2">
       <button class="btn btn-outline btn-sm" onclick="testAPIs()">Test APIs</button>
       <button class="btn btn-outline btn-sm" onclick="testCart()">Test Cart</button>
+      <button class="btn btn-outline btn-sm" onclick="debugProducts()">Debug Products</button>
     </div> {% endcomment %}
     
     <!-- Search Results -->
@@ -487,6 +648,12 @@
         <h2 class="card-title">Shopping List</h2>
         <div class="flex items-center gap-4">
           <div class="flex items-center gap-2">
+            {% comment %} <button class="btn btn-outline btn-sm" onclick="downloadTemplate()">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              Download Template
+            </button> {% endcomment %}
             <button class="btn btn-outline btn-sm" onclick="importCSV()">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
@@ -505,6 +672,12 @@
               </svg>
               Clear All
             </button>
+            {% comment %} <button class="btn btn-outline btn-sm" onclick="clearProductCache()" title="Clear search cache">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+              Clear Cache
+            </button> {% endcomment %}
           </div>
           <div class="flex items-center gap-4 text-sm text-muted-foreground">
             <span id="total-items">0 items</span>
@@ -529,7 +702,7 @@
         <p class="text-lg mb-2">Your shopping list is empty</p>
         <p class="text-sm mb-4">Search for products above to start building your list</p>
         <p class="text-xs text-muted-foreground">
-          Or import a CSV file with columns: Product Title, Variant, SKU, Price, Quantity, Variant ID
+          Or import a CSV file with columns: Product Title, Variant, SKU, Price, Quantity
         </p>
       </div>
 
@@ -544,7 +717,7 @@
                 <th class="text-left py-3 px-2 font-medium text-muted-foreground">SKU</th>
                 <th class="text-right py-3 px-2 font-medium text-muted-foreground">Price</th>
                 <th class="text-center py-3 px-2 font-medium text-muted-foreground">Qty</th>
-                <th class="text-left py-3 px-2 font-medium text-muted-foreground">Variant ID</th>
+                <th class="text-right py-3 px-2 font-medium text-muted-foreground">Total</th>
                 <th class="text-center py-3 px-2 font-medium text-muted-foreground">Actions</th>
             </tr>
           </thead>
@@ -579,9 +752,96 @@
 <!-- Hidden file input for CSV import -->
 <input type="file" id="csv-input" accept=".csv" style="display: none;" onchange="handleFileImport(event)">
 
+
+
   <script>
+// Get the excluded tag setting from the block configuration
+const excludedTag = {{ block.settings.excluded_tag | json }};
+console.log('Excluded tag setting:', excludedTag);
+
 // Shopify product data - will be populated from your store
 let shopifyProducts = [];
+let productCache = new Map(); // Cache for search results
+let lastSearchTime = 0;
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes cache
+
+// Function to load ALL products from Shopify (for CSV imports)
+async function loadAllShopifyProducts() {
+  try {
+    console.log('Loading all products for CSV import...');
+    
+    // Shopify API has a maximum limit of 250 products per request
+    // We'll fetch in batches to get all products
+    let allProducts = [];
+    let page = 1;
+    const limit = 250; // Maximum allowed by Shopify
+    
+    while (true) {
+      const response = await fetch(`/products.json?limit=${limit}&page=${page}`);
+      if (!response.ok) {
+        console.log('Failed to fetch products page', page);
+        break;
+      }
+      
+      const data = await response.json();
+      const pageProducts = data.products;
+      
+      if (pageProducts.length === 0) {
+        console.log('No more products to fetch');
+        break;
+      }
+      
+      console.log(`Fetched ${pageProducts.length} products from page ${page}`);
+      allProducts = allProducts.concat(pageProducts);
+      
+      // If we got fewer products than the limit, we've reached the end
+      if (pageProducts.length < limit) {
+        break;
+      }
+      
+      page++;
+      
+      // Safety check to prevent infinite loops
+      if (page > 10) {
+        console.log('Reached maximum page limit, stopping');
+        break;
+      }
+    }
+    
+    console.log(`Total products fetched: ${allProducts.length}`);
+    
+    // Process all products and their variants
+    const processedProducts = allProducts.flatMap(product => 
+      product.variants.map(variant => ({
+        id: product.id.toString(),
+        title: product.title,
+        variant: variant.title,
+        sku: variant.sku || '',
+        price: parseFloat(variant.price),
+        variantId: variant.id.toString(),
+        handle: product.handle
+      }))
+    );
+    
+    shopifyProducts = processedProducts;
+    console.log(`Total variants processed: ${shopifyProducts.length}`);
+    
+    return shopifyProducts;
+    
+  } catch (error) {
+    console.error('Error loading Shopify products:', error);
+    return [];
+  }
+}
+
+// Lazy loading function - only loads products when import is attempted
+async function ensureProductsLoaded() {
+  if (shopifyProducts.length === 0) {
+    console.log('No products loaded yet, loading all products for import...');
+    await loadAllShopifyProducts();
+  }
+  return shopifyProducts;
+}
 
 // Function to load products from Shopify
 async function loadShopifyProducts() {
@@ -712,161 +972,294 @@ async function performPredictiveSearch(query) {
   try {
     console.log('Searching for:', query);
     
+    // Check cache first
+    const cacheKey = query.toLowerCase().trim();
+    const now = Date.now();
+    
+    if (productCache.has(cacheKey) && (now - lastSearchTime) < CACHE_DURATION) {
+      console.log('Using cached results for:', query);
+      const cachedResults = productCache.get(cacheKey);
+      hideSearchLoader();
+      showSearchResults(cachedResults);
+      return;
+    }
+    
     let products = [];
     
-    // Use a simple, reliable search approach
+    // Use Shopify's Predictive Search API
     try {
-      // Get products using pagination
-      let allProducts = [];
-      let page = 1;
-      const limit = 250;
-      const maxPages = 10; // Search through 10 pages (2500 products)
+      console.log('Using Shopify Predictive Search API...');
       
-      while (page <= maxPages) {
-        const response = await fetch(`/products.json?limit=${limit}&page=${page}`);
+      // Check if this looks like a SKU search (numeric or alphanumeric pattern)
+      const isSkuSearch = /^[0-9A-Za-z\-_]+$/.test(query.trim()) && query.trim().length >= 3;
+      console.log('Is SKU search?', isSkuSearch, 'Query:', query);
+      
+      // Build search URL with appropriate fields
+      let searchUrl;
+      if (isSkuSearch) {
+        // For SKU searches, include variants.sku in the searchable fields
+        searchUrl = `/search/suggest.json?q=${encodeURIComponent(query)}&resources[type]=product&resources[limit]=20&resources[options][fields]=title,product_type,variants.title,variants.sku,vendor`;
+        console.log('SKU search URL:', searchUrl);
+      } else {
+        // For regular searches, use default fields
+        searchUrl = `/search/suggest.json?q=${encodeURIComponent(query)}&resources[type]=product&resources[limit]=20`;
+        console.log('Regular search URL:', searchUrl);
+      }
+      
+      // First, get search suggestions from Shopify's predictive search
+      const searchResponse = await fetch(searchUrl);
+      
+      if (searchResponse.ok) {
+        const searchData = await searchResponse.json();
+        console.log('Predictive search results:', searchData);
         
-        if (response.ok) {
-          const data = await response.json();
-          console.log(`Page ${page} products:`, data.products ? data.products.length : 0);
+        if (searchData.resources && searchData.resources.results && searchData.resources.results.products) {
+          const suggestedProducts = searchData.resources.results.products;
+          console.log('Suggested products:', suggestedProducts.length);
           
-          if (data.products && data.products.length > 0) {
-            allProducts = allProducts.concat(data.products);
-            page++;
-          } else {
-            break;
+          // Get full product details for each suggested product
+          const productPromises = suggestedProducts.map(async (suggestedProduct) => {
+            try {
+              const productResponse = await fetch(`/products/${suggestedProduct.handle}.json`);
+              if (productResponse.ok) {
+                const productData = await productResponse.json();
+                return productData.product;
+              }
+            } catch (error) {
+              console.log('Failed to fetch product details for:', suggestedProduct.handle);
+            }
+            return null;
+          });
+          
+          const productDetails = await Promise.all(productPromises);
+          const validProducts = productDetails.filter(p => p !== null);
+          
+          console.log('Valid products with details:', validProducts.length);
+          
+          // Filter out products with excluded tag (if set)
+          const filteredProducts = excludedTag ? validProducts.filter(product => {
+            const hasExcludedTag = product.tags && product.tags.includes(excludedTag);
+            if (hasExcludedTag) {
+              console.log(`Excluding product with ${excludedTag} tag: ${product.title}`);
+            }
+            return !hasExcludedTag;
+          }) : validProducts;
+          
+          console.log('Products after excluded tag filter:', filteredProducts.length);
+          
+          // Process products and their variants
+          const processedProducts = [];
+          
+          console.log('Processing filtered products:', filteredProducts.length);
+          
+          // Process products with async/await properly
+          for (let i = 0; i < filteredProducts.length; i++) {
+            const product = filteredProducts[i];
+            console.log(`Product ${i + 1}: ${product.title}`);
+            console.log(`- Available: ${product.available}`);
+            console.log(`- Variants: ${product.variants.length}`);
+            
+            // Since predictive search returns products with empty variants array,
+            // we need to fetch full product details to get actual variants
+            console.log(`✓ Processing product ${product.title} from predictive search`);
+            
+            try {
+              const productResponse = await fetch(`/products/${product.handle}.json`);
+              if (productResponse.ok) {
+                const productData = await productResponse.json();
+                const fullProduct = productData.product;
+                
+                console.log(`  Full product variants: ${fullProduct.variants.length}`);
+                
+                // Only add the product once, not each variant separately
+                // Use the first variant for display purposes, but store all variants for the modal
+                const firstVariant = fullProduct.variants[0];
+                
+                console.log(`  Using first variant: ${firstVariant.title} (SKU: ${firstVariant.sku || 'N/A'}) - Available: ${firstVariant.available}`);
+                
+                // Calculate relevance score based on the best match across all variants
+                let bestScore = 0;
+                const searchLower = query.toLowerCase();
+                const titleLower = product.title.toLowerCase();
+                
+                // Check all variants for the best match
+                fullProduct.variants.forEach(variant => {
+                  const skuLower = (variant.sku || '').toLowerCase();
+                  const variantTitleLower = variant.title.toLowerCase();
+                  let variantScore = 0;
+                  
+                  // SKU exact match gets highest priority
+                  if (skuLower === searchLower) {
+                    variantScore += 3000;
+                  }
+                  // SKU contains search query
+                  else if (skuLower.includes(searchLower)) {
+                    variantScore += 1500;
+                  }
+                  
+                  // Variant title match
+                  if (variantTitleLower.includes(searchLower)) {
+                    variantScore += 300;
+                  }
+                  
+                  bestScore = Math.max(bestScore, variantScore);
+                });
+                
+                // Title-based scoring
+                if (titleLower === searchLower) {
+                  bestScore += 2000;
+                } else if (titleLower.startsWith(searchLower)) {
+                  bestScore += 1000;
+                } else if (titleLower.includes(searchLower)) {
+                  bestScore += 500;
+                }
+                
+                console.log(`  Best score: ${bestScore}`);
+                
+                // Store the product with all its variants for modal use
+                processedProducts.push({
+                  id: product.id.toString(),
+                  title: product.title,
+                  variant: firstVariant.title,
+                  sku: firstVariant.sku || '',
+                  price: parseFloat(firstVariant.price),
+                  variantId: firstVariant.id.toString(),
+                  handle: product.handle,
+                  image: product.featured_image || product.image,
+                  available: firstVariant.available,
+                  score: bestScore,
+                  hasMultipleVariants: fullProduct.variants.length > 1,
+                  allVariants: fullProduct.variants // Store all variants for modal
+                });
+              }
+            } catch (error) {
+              console.log(`Failed to get variant data for ${product.title}:`, error);
+            }
           }
-        } else {
-          console.log('Failed to fetch page', page);
-          break;
+          
+          // Sort by relevance score (highest first)
+          processedProducts.sort((a, b) => b.score - a.score);
+          
+          console.log('Processed products before score removal:', processedProducts.length);
+          console.log('Sample processed products:', processedProducts.slice(0, 3));
+          
+          // Remove score from final results
+          products = processedProducts.map(product => {
+            const { score, ...productWithoutScore } = product;
+            return productWithoutScore;
+          });
+          
+          console.log('Final processed products:', products.length);
+          console.log('Sample final products:', products.slice(0, 3));
+        }
+      } else {
+        console.log('Predictive search failed, falling back to direct product search...');
+        
+        // Fallback: direct product search for SKUs
+        if (query.length <= 10) { // Likely a SKU
+          try {
+            const fallbackResponse = await fetch(`/products.json?limit=250`);
+            if (fallbackResponse.ok) {
+              const fallbackData = await fallbackResponse.json();
+              const allProducts = fallbackData.products.filter(p => p.published_at && p.status === 'active');
+              
+              // Filter out products with excluded tag (if set)
+              const filteredProducts = excludedTag ? allProducts.filter(product => {
+                const hasExcludedTag = product.tags && product.tags.includes(excludedTag);
+                if (hasExcludedTag) {
+                  console.log(`Excluding product with ${excludedTag} tag (fallback): ${product.title}`);
+                }
+                return !hasExcludedTag;
+              }) : allProducts;
+              
+              // Search for exact SKU matches
+              const skuMatches = [];
+              filteredProducts.forEach(product => {
+                product.variants.forEach(variant => {
+                  if (variant.sku && variant.sku.toLowerCase() === query.toLowerCase()) {
+                    skuMatches.push({
+                      id: product.id.toString(),
+                      title: product.title,
+                      variant: variant.title,
+                      sku: variant.sku || '',
+                      price: parseFloat(variant.price),
+                      variantId: variant.id.toString(),
+                      handle: product.handle,
+                      image: product.featured_image || product.image,
+                      available: variant.available,
+                      hasMultipleVariants: product.variants.length > 1,
+                      allVariants: product.variants // Add all variants for modal use
+                    });
+                  }
+                });
+              });
+              
+              products = skuMatches;
+              console.log('SKU fallback matches:', products.length);
+            }
+          } catch (fallbackError) {
+            console.log('Fallback search failed:', fallbackError);
+          }
         }
       }
-      
-      console.log('Total products for filtering:', allProducts.length);
-      
-      // Log some sample products to verify loading
-      console.log('Sample products loaded:');
-      allProducts.slice(0, 5).forEach((product, index) => {
-        console.log(`Product ${index + 1}: ${product.title} - SKUs: ${product.variants.map(v => v.sku || 'N/A').join(', ')}`);
-      });
-      
-      if (allProducts.length > 0) {
-        const searchLower = query.toLowerCase();
-        const searchTerms = searchLower.split(' ').filter(term => term.length > 0);
-        
-        const filteredProducts = allProducts.filter(product => {
-          const titleLower = product.title.toLowerCase();
-          const tagsLower = Array.isArray(product.tags) ? product.tags.join(' ').toLowerCase() : (product.tags || '').toLowerCase();
-          const vendorLower = (product.vendor || '').toLowerCase();
-          const typeLower = (product.product_type || '').toLowerCase();
+    } catch (searchError) {
+      console.log('Search failed:', searchError);
+    }
+    
+    // If no results from predictive search and query looks like a SKU, try direct SKU search
+    if (products.length === 0 && query.length <= 10 && /^\d+$/.test(query)) {
+      console.log('No predictive results, trying direct SKU search...');
+      try {
+        const skuResponse = await fetch(`/products.json?limit=250`);
+        if (skuResponse.ok) {
+          const skuData = await skuResponse.json();
+          const allProducts = skuData.products.filter(p => p.published_at && p.status === 'active');
           
-          // For short queries (likely SKUs), prioritize exact matches
-          if (query.length <= 6) {
-            const exactSkuMatch = product.variants.some(variant => {
-              const sku = (variant.sku || '').toLowerCase();
-              return sku === searchLower;
-            });
-            
-            if (exactSkuMatch) {
-              console.log('Found exact SKU match for:', query);
-              return true;
+          // Filter out products with excluded tag (if set)
+          const filteredProducts = excludedTag ? allProducts.filter(product => {
+            const hasExcludedTag = product.tags && product.tags.includes(excludedTag);
+            if (hasExcludedTag) {
+              console.log(`Excluding product with ${excludedTag} tag (direct SKU): ${product.title}`);
             }
-          }
+            return !hasExcludedTag;
+          }) : allProducts;
           
-          // Check if any search term matches title, tags, vendor, or product type
-          const titleMatch = searchTerms.some(term => titleLower.includes(term));
-          const tagsMatch = searchTerms.some(term => tagsLower.includes(term));
-          const vendorMatch = searchTerms.some(term => vendorLower.includes(term));
-          const typeMatch = searchTerms.some(term => typeLower.includes(term));
-          
-          // Also check variants for SKU and title matches
-          const variantMatch = product.variants.some(variant => {
-            const variantTitleLower = variant.title.toLowerCase();
-            const skuLower = (variant.sku || '').toLowerCase();
-            return searchTerms.some(term => 
-              variantTitleLower.includes(term) || skuLower.includes(term)
-            );
-          });
-          
-          return titleMatch || tagsMatch || vendorMatch || typeMatch || variantMatch;
-        });
-        
-        console.log('Filtered products count:', filteredProducts.length);
-        
-        // Add filtered products to results with relevance scoring
-        const scoredProducts = [];
-        
-        filteredProducts.forEach(product => {
-          product.variants.forEach(variant => {
-            // Calculate relevance score
-            let score = 0;
-            const titleLower = product.title.toLowerCase();
-            const searchLower = query.toLowerCase();
-            const searchTerms = searchLower.split(' ').filter(term => term.length > 0);
-            
-            // SKU exact match gets highest priority (especially for short queries)
-            if (variant.sku && variant.sku.toLowerCase() === searchLower) {
-              score += 2000; // Highest score for exact SKU match
-            }
-            // SKU contains search query
-            else if (variant.sku && variant.sku.toLowerCase().includes(searchLower)) {
-              score += 1000;
-            }
-            
-            // Exact title match gets high score
-            if (titleLower === searchLower) {
-              score += 1500;
-            }
-            // Title starts with search query
-            else if (titleLower.startsWith(searchLower)) {
-              score += 800;
-            }
-            // Title contains all search terms in order
-            else if (searchTerms.every(term => titleLower.includes(term))) {
-              score += 600;
-            }
-            // Title contains search query as substring
-            else if (titleLower.includes(searchLower)) {
-              score += 400;
-            }
-            // Partial title match
-            else if (searchTerms.some(term => titleLower.includes(term))) {
-              score += 200;
-            }
-            
-            // Variant title match
-            if (variant.title.toLowerCase().includes(searchLower)) {
-              score += 300;
-            }
-            
-            scoredProducts.push({
-              id: product.id.toString(),
-              title: product.title,
-              variant: variant.title,
-              sku: variant.sku || '',
-              price: parseFloat(variant.price),
-              variantId: variant.id.toString(),
-              handle: product.handle,
-              image: product.featured_image || product.image,
-              available: variant.available,
-              score: score
+          // Search for exact SKU matches
+          const skuMatches = [];
+          filteredProducts.forEach(product => {
+            product.variants.forEach(variant => {
+              if (variant.sku && variant.sku.toLowerCase() === query.toLowerCase()) {
+                skuMatches.push({
+                  id: product.id.toString(),
+                  title: product.title,
+                  variant: variant.title,
+                  sku: variant.sku || '',
+                  price: parseFloat(variant.price),
+                  variantId: variant.id.toString(),
+                  handle: product.handle,
+                  image: product.featured_image || product.image,
+                  available: variant.available,
+                  hasMultipleVariants: product.variants.length > 1,
+                  allVariants: product.variants // Add all variants for modal use
+                });
+              }
             });
           });
-        });
-        
-        // Sort by relevance score (highest first)
-        scoredProducts.sort((a, b) => b.score - a.score);
-        
-        // Remove score from final results
-        products = scoredProducts.map(product => {
-          const { score, ...productWithoutScore } = product;
-          return productWithoutScore;
-        });
+          
+          products = skuMatches;
+          console.log('Direct SKU search matches:', products.length);
+        }
+      } catch (skuError) {
+        console.log('Direct SKU search failed:', skuError);
       }
-    } catch (productsError) {
-      console.log('Search failed:', productsError);
     }
     
     console.log('Final search results:', products);
+    
+    // Cache the results
+    productCache.set(cacheKey, products);
+    lastSearchTime = now;
+    
     hideSearchLoader();
     showSearchResults(products);
     
@@ -898,36 +1291,57 @@ function showSearchResults(products) {
     `;
   } else {
     container.innerHTML = products.map(product => `
-      <div class="flex items-center justify-between p-3 hover:bg-accent rounded-lg transition-colors">
-        <div class="flex-1 space-y-1">
+      <div class="border-b border-gray-200 last:border-b-0">
+        <div class="flex items-center justify-between p-3 hover:bg-accent rounded-lg transition-colors">
+          <div class="flex-1 space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="font-medium">${product.title}</span>
+              ${!product.hasMultipleVariants && product.variant !== 'Default Title' ? `<span class="badge badge-secondary text-xs">${product.variant}</span>` : ''}
+               ${(!product.hasMultipleVariants && (product.available === false || product.available === 'false' || product.available === 0))
+                  ? `<span class=\"badge badge-outline text-xs\">Out of stock</span>`
+                  : ''}
+            </div>
+            <div class="flex items-center gap-4 text-sm text-muted-foreground">
+              <span>SKU: ${product.hasMultipleVariants ? getParentSku(product.sku) : (product.sku || 'N/A')}</span>
+              <span class="font-medium text-foreground">$${product.price.toFixed(2)}</span>
+            </div>
+          </div>
+          
           <div class="flex items-center gap-2">
-            <span class="font-medium">${product.title}</span>
-            <span class="badge badge-secondary text-xs">${product.variant}</span>
-            ${!product.available ? '<span class="badge badge-outline text-xs text-destructive">Out of Stock</span>' : ''}
-          </div>
-          <div class="flex items-center gap-4 text-sm text-muted-foreground">
-            <span>SKU: ${product.sku || 'N/A'}</span>
-            <span class="font-medium text-foreground">$${product.price.toFixed(2)}</span>
+            ${product.hasMultipleVariants ? '' : `
+              <div class="flex items-center border rounded" style="width: 52px; height: 24px;">
+                <button style="width: 16px; height: 24px; border: none; background: transparent; cursor: pointer; font-size: 12px; ${((product.available === false || product.available === 'false' || product.available === 0) ? 'opacity: 0.5; cursor: not-allowed;' : '')}" ${((product.available === false || product.available === 'false' || product.available === 0) ? 'disabled' : '')} onclick="updateQuantity('${product.variantId}', -1)">
+                  -
+                </button>
+                <span style="width: 20px; height: 24px; border-left: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; font-size: 12px; line-height: 24px;" id="qty-${product.variantId}">1</span>
+                <button style="width: 16px; height: 24px; border: none; background: transparent; cursor: pointer; font-size: 12px; ${((product.available === false || product.available === 'false' || product.available === 0) ? 'opacity: 0.5; cursor: not-allowed;' : '')}" ${((product.available === false || product.available === 'false' || product.available === 0) ? 'disabled' : '')} onclick="updateQuantity('${product.variantId}', 1)">
+                  +
+                </button>
+              </div>
+            `}
+            <button id="toggle-${product.handle}" class="btn btn-sm btn-primary" ${(
+                (!product.hasMultipleVariants && (product.available === false || product.available === 'false' || product.available === 0))
+              ? 'disabled style=\"opacity:0.5;cursor:not-allowed;\"' : '')} onclick="event.stopPropagation(); ${product.hasMultipleVariants ? 'toggleVariants(\'' + product.handle + '\')' : 'addToCartFromSearch(\'' + product.variantId + '\')'}">
+              ${product.hasMultipleVariants ? `
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              ` : `
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+              `}
+              ${product.hasMultipleVariants
+                ? 'Show Variants'
+                : ((product.available === false || product.available === 'false' || product.available === 0) ? 'Out of stock' : 'Add')}
+            </button>
           </div>
         </div>
-        
-        <div class="flex items-center gap-2">
-          <div class="flex items-center border rounded" style="width: 52px; height: 24px; ${!product.available ? 'opacity: 0.5;' : ''}">
-            <button style="width: 16px; height: 24px; border: none; background: transparent; cursor: pointer; font-size: 12px; ${!product.available ? 'opacity: 0.5; cursor: not-allowed;' : ''}" onclick="updateQuantity('${product.variantId}', -1)" ${!product.available ? 'disabled' : ''}>
-              -
-            </button>
-            <span style="width: 20px; height: 24px; border-left: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; font-size: 12px; line-height: 24px;" id="qty-${product.variantId}">1</span>
-            <button style="width: 16px; height: 24px; border: none; background: transparent; cursor: pointer; font-size: 12px; ${!product.available ? 'opacity: 0.5; cursor: not-allowed;' : ''}" onclick="updateQuantity('${product.variantId}', 1)" ${!product.available ? 'disabled' : ''}>
-              +
-            </button>
-          </div>
-          <button class="btn btn-sm ${product.available ? 'btn-primary' : 'bg-muted text-muted-foreground border-muted cursor-not-allowed opacity-50'}" onclick="addToCartFromSearch('${product.variantId}')" ${!product.available ? 'disabled' : ''}>
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-            ${product.available ? 'Add' : 'Out of Stock'}
-          </button>
-        </div>
+                 ${product.hasMultipleVariants ? `
+           <div id="variants-${product.handle}" style="display: none; background-color: #f7f7f7;" class="bg-gray-50 border-t border-gray-200">
+             <!-- Variants will be loaded here when toggled -->
+           </div>
+         ` : ''}
       </div>
     `).join('');
   }
@@ -981,12 +1395,6 @@ function addToCartFromSearch(variantId) {
   console.log('Quantity to add:', quantity);
   
   if (product) {
-    // Check if product is available
-    if (!product.available) {
-      alert('This product is out of stock and cannot be added to your shopping list.');
-      return;
-    }
-    
     // Add to shopping list
     console.log('Calling addToCart with:', product, quantity);
     addToCart(product, quantity);
@@ -998,9 +1406,8 @@ function addToCartFromSearch(variantId) {
       qtyElement.textContent = '1';
     }
     
-    // Clear search and hide results
-    hideSearchResults();
-    document.getElementById('search-input').value = '';
+    // Keep results open; do not hide on add. Optional: clear input but retain list.
+    // document.getElementById('search-input').value = '';
     
     // Show success feedback
     showAddSuccess(product.title, quantity);
@@ -1061,8 +1468,8 @@ function addToCart(product, quantity = 1) {
 function updateCartQuantity(variantId, quantity) {
   if (quantity <= 0) {
     removeFromCart(variantId);
-          return;
-        }
+    return;
+  }
         
   const item = cartItems.find(item => item.variantId === variantId);
   if (item) {
@@ -1115,7 +1522,7 @@ function updateCartDisplay() {
           <div class="font-medium">${item.title}</div>
         </td>
         <td class="py-4 px-2">
-          <span class="badge badge-outline text-xs">${item.variant}</span>
+          ${item.variant !== 'Default Title' ? `<span class="badge badge-outline text-xs">${item.variant}</span>` : ''}
         </td>
         <td class="py-4 px-2">
           <code class="text-xs bg-muted px-2 py-1 rounded">${item.sku}</code>
@@ -1134,14 +1541,7 @@ function updateCartDisplay() {
             </div>
           </div>
         </td>
-        <td class="py-4 px-2">
-          <button class="group flex items-center gap-1 text-xs bg-muted px-1.5 py-0.5 rounded hover:bg-accent transition-colors cursor-pointer" onclick="copyToClipboard('${item.variantId}')" title="Click to copy variant ID">
-            <code class="font-mono text-xs">${item.variantId}</code>
-            <svg class="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-          </button>
-        </td>
+        <td class="py-4 px-2 text-right font-medium">$${(item.price * item.quantity).toFixed(2)}</td>
         <td class="py-4 px-2">
           <div class="flex justify-center">
             <button class="btn btn-ghost btn-sm text-destructive hover:text-destructive hover:bg-destructive/10" onclick="removeFromCart('${item.variantId}')">
@@ -1182,6 +1582,75 @@ function clearAll() {
         }
         
         try {
+          // 1) Pre-check stock availability for each line item using the .js product endpoint
+          //    We'll gather any items that appear unavailable and highlight them instead of adding
+          const unavailableRows = [];
+          
+          // Clear previous highlights
+          document.querySelectorAll('#cart-items tr').forEach(tr => tr.classList.remove('oos-highlight'));
+          
+          for (const item of cartItems) {
+            // Find the related product handle from search results cache if available
+            let handle = '';
+            let variantData = null;
+            for (const product of searchResults || []) {
+              if (product.allVariants) {
+                const found = product.allVariants.find(v => v.id == item.variantId);
+                if (found) {
+                  handle = product.handle || '';
+                  variantData = found;
+                  break;
+                }
+              }
+            }
+            
+            // If we don't have the handle, try to infer via window.location or skip to server add
+            if (!handle) {
+              // Cannot verify; proceed without blocking
+              continue;
+            }
+            
+            try {
+              const resp = await fetch(`/products/${handle}.js`);
+              if (!resp.ok) continue; // be permissive if fetch fails
+              const prod = await resp.json();
+              const variant = prod.variants.find(v => v.id == item.variantId);
+              if (!variant) continue;
+              
+              const isAvailable = (typeof variant.available === 'boolean') ? variant.available
+                : (typeof variant.available === 'string') ? (variant.available.toLowerCase() === 'true')
+                : (typeof variant.inventory_quantity === 'number') ? (variant.inventory_quantity > 0 || variant.inventory_policy === 'continue')
+                : (typeof variant.availableForSale === 'boolean') ? variant.availableForSale
+                : (typeof variant.available_for_sale === 'boolean') ? variant.available_for_sale
+                : true; // default permissive
+              
+              if (!isAvailable) {
+                unavailableRows.push(item.variantId);
+              }
+            } catch (e) {
+              console.warn('Stock pre-check failed for handle:', handle, e);
+            }
+          }
+          
+          if (unavailableRows.length > 0) {
+            // Highlight rows and notify the user
+            const tbody = document.getElementById('cart-items');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            for (const row of rows) {
+              const idCellText = (row.querySelector('[data-variant-id]')?.getAttribute('data-variant-id')) || '';
+              // Our rows don't include the id plainly; instead match by inline onclick content
+              const minusBtn = row.querySelector('button[onclick^="updateCartQuantity("]');
+              const match = minusBtn?.getAttribute('onclick')?.match(/updateCartQuantity\('\s*(\d+)'/);
+              const rowVariantId = match ? match[1] : '';
+              if (unavailableRows.includes(rowVariantId)) {
+                row.classList.add('oos-highlight');
+              }
+            }
+            alert('Some items are out of stock. Please remove the highlighted items before adding to cart.');
+            return;
+          }
+          
+          // 2) Proceed to add items one by one if all pass the availability check
           console.log('Adding items to Shopify cart...');
           
           // Add items one by one to ensure compatibility
@@ -1234,16 +1703,15 @@ function exportCSV() {
           return;
         }
         
-  const headers = ['Product Title', 'Variant', 'SKU', 'Price', 'Quantity', 'Variant ID'];
+  const headers = ['Product Title', 'Variant', 'SKU', 'Price', 'Quantity'];
         const csvContent = [
           headers.join(','),
     ...cartItems.map(item => [
             `"${item.title.replace(/"/g, '""')}"`,
-      `"${item.variant.replace(/"/g, '""')}"`,
+      `"${(item.variant === 'Default Title' ? '' : item.variant).replace(/"/g, '""')}"`,
       `"${item.sku}"`,
       item.price.toString(),
-      item.quantity.toString(),
-      `"${item.variantId}"`
+      item.quantity.toString()
           ].join(','))
         ].join('\n');
 
@@ -1258,8 +1726,53 @@ function exportCSV() {
         document.body.removeChild(link);
       }
 
-function importCSV() {
-  document.getElementById('csv-input').click();
+// Updated import function with lazy loading
+async function importCSV() {
+  // Show loading message
+  const loadingMessage = document.createElement('div');
+  loadingMessage.id = 'import-loading';
+  loadingMessage.style.cssText = `
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 10000;
+    font-size: 16px;
+  `;
+  loadingMessage.innerHTML = `
+    <div style="text-align: center;">
+      <div style="margin-bottom: 10px;">Loading product catalog...</div>
+      <div style="font-size: 12px; opacity: 0.8;">This may take a moment for large stores</div>
+    </div>
+  `;
+  document.body.appendChild(loadingMessage);
+  
+  try {
+    // Load all products if not already loaded
+    await ensureProductsLoaded();
+    
+    // Remove loading message
+    if (loadingMessage.parentNode) {
+      loadingMessage.parentNode.removeChild(loadingMessage);
+    }
+    
+    // Trigger file input
+    document.getElementById('csv-input').click();
+    
+  } catch (error) {
+    console.error('Error loading products for import:', error);
+    
+    // Remove loading message
+    if (loadingMessage.parentNode) {
+      loadingMessage.parentNode.removeChild(loadingMessage);
+    }
+    
+    alert('Error loading product catalog. Please try again.');
+  }
 }
 
 function handleFileImport(event) {
@@ -1283,18 +1796,22 @@ function handleFileImport(event) {
       }
 
       const headers = lines[0].split(',').map(h => h.replace(/"/g, '').trim());
-      const expectedHeaders = ['Product Title', 'Variant', 'SKU', 'Price', 'Quantity', 'Variant ID'];
+      const expectedHeaders = ['Product Title', 'Variant', 'SKU', 'Price', 'Quantity'];
       
       const hasAllHeaders = expectedHeaders.every(expected => 
         headers.some(header => header.toLowerCase() === expected.toLowerCase())
       );
 
       if (!hasAllHeaders) {
-        alert('CSV file must contain columns: Product Title, Variant, SKU, Price, Quantity, Variant ID');
+        alert('CSV file must contain columns: Product Title, Variant, SKU, Price, Quantity');
         return;
       }
 
-      const importedItems = [];
+      const importResults = {
+        successful: [],
+        failed: [],
+        total: lines.length - 1
+      };
       
       for (let i = 1; i < lines.length; i++) {
         const values = lines[i].split(',').map(v => v.replace(/"/g, '').trim());
@@ -1311,39 +1828,60 @@ function handleFileImport(event) {
           };
 
           const title = getValueByHeader('Product Title');
-          const variant = getValueByHeader('Variant');
+          let variant = getValueByHeader('Variant');
+          // Treat blank variant as 'Default Title' to support non-variant products
+          if (!variant) {
+            variant = 'Default Title';
+          }
           const sku = getValueByHeader('SKU');
           const price = parseFloat(getValueByHeader('Price'));
           const quantity = parseInt(getValueByHeader('Quantity'));
-          const variantId = getValueByHeader('Variant ID');
 
-          if (!title || !variant || !sku || isNaN(price) || isNaN(quantity) || !variantId) {
+          if (!title || isNaN(price) || isNaN(quantity)) {
             console.warn(`Skipping row ${i + 1}: missing or invalid data`);
             continue;
           }
 
-          importedItems.push({
-            id: `imported-${i}`,
-            title,
-            variant,
-            sku,
-            price,
-            quantity,
-            variantId
-          });
+          // Use smart matching to find the product
+          const matchedProduct = findProductByMultipleCriteria(title, variant, sku);
+          
+          if (matchedProduct) {
+            importResults.successful.push({
+              id: `imported-${i}`,
+              title: matchedProduct.title,
+              variant: matchedProduct.variant,
+              sku: matchedProduct.sku,
+              price: matchedProduct.price,
+              quantity,
+              variantId: matchedProduct.variantId
+            });
+          } else {
+            importResults.failed.push({
+              row: i + 1,
+              title,
+              variant,
+              sku
+            });
+            console.warn(`No match found for row ${i + 1}: ${title} - ${variant}`);
+          }
         } catch (error) {
           console.warn(`Error parsing row ${i + 1}:`, error);
         }
       }
 
-      if (importedItems.length === 0) {
+      if (importResults.successful.length === 0) {
         alert('No valid items found in CSV file');
         return;
       }
 
-      cartItems = importedItems;
-      updateCartDisplay();
-      alert(`Successfully imported ${importedItems.length} items`);
+      // Show import results to user
+      showImportResults(importResults);
+      
+      // Add successful items to cart
+      if (importResults.successful.length > 0) {
+        cartItems = importResults.successful;
+        updateCartDisplay();
+      }
       
     } catch (error) {
       alert('Error reading CSV file');
@@ -1394,6 +1932,174 @@ async function testAPIs() {
   }
 }
 
+// Smart matching function for CSV imports
+function findProductByMultipleCriteria(title, variant, sku) {
+  console.log('=== SMART MATCHING ===');
+  console.log('Looking for:', { title, variant, sku });
+  console.log('Available products:', shopifyProducts.length);
+  
+  // Normalize input data
+  const normalizedTitle = title.toLowerCase().trim();
+  const normalizedVariant = variant.toLowerCase().trim();
+  const normalizedSku = sku ? sku.toLowerCase().trim() : '';
+  
+  // First, try exact SKU match (most reliable)
+  if (normalizedSku) {
+    const skuMatch = shopifyProducts.find(p => 
+      p.sku && p.sku.toLowerCase().trim() === normalizedSku
+    );
+    if (skuMatch) {
+      console.log('✅ Found exact SKU match:', skuMatch);
+      return skuMatch;
+    }
+  }
+  
+  // Second, try exact title + variant match
+  const titleVariantMatch = shopifyProducts.find(p => 
+    p.title.toLowerCase().trim() === normalizedTitle &&
+    p.variant.toLowerCase().trim() === normalizedVariant
+  );
+  if (titleVariantMatch) {
+    console.log('✅ Found exact title + variant match:', titleVariantMatch);
+    return titleVariantMatch;
+  }
+  
+  // Third, try partial title match with exact variant (but only if title is substantial)
+  if (normalizedTitle.length >= 3) {
+    const partialMatch = shopifyProducts.find(p => 
+      p.title.toLowerCase().trim().includes(normalizedTitle) &&
+      p.variant.toLowerCase().trim() === normalizedVariant
+    );
+    if (partialMatch) {
+      console.log('✅ Found partial title match:', partialMatch);
+      return partialMatch;
+    }
+  }
+  
+  // Fourth, try exact title with partial variant match (but only if variant is substantial)
+  if (normalizedVariant.length >= 2) {
+    const titlePartialVariantMatch = shopifyProducts.find(p => 
+      p.title.toLowerCase().trim() === normalizedTitle &&
+      p.variant.toLowerCase().trim().includes(normalizedVariant)
+    );
+    if (titlePartialVariantMatch) {
+      console.log('✅ Found title with partial variant match:', titlePartialVariantMatch);
+      return titlePartialVariantMatch;
+    }
+  }
+  
+  // Fifth, try fuzzy matching for similar titles
+  const fuzzyMatch = shopifyProducts.find(p => {
+    const productTitle = p.title.toLowerCase().trim();
+    const productVariant = p.variant.toLowerCase().trim();
+    
+    // Check if titles are very similar (allowing for small differences)
+    const titleSimilarity = calculateSimilarity(normalizedTitle, productTitle);
+    const variantMatch = productVariant === normalizedVariant;
+    
+    return titleSimilarity > 0.8 && variantMatch;
+  });
+  
+  if (fuzzyMatch) {
+    console.log('✅ Found fuzzy title match:', fuzzyMatch);
+    return fuzzyMatch;
+  }
+  
+  console.log('❌ No match found for:', { title, variant, sku });
+  return null;
+}
+
+// Helper function to calculate string similarity
+function calculateSimilarity(str1, str2) {
+  if (str1 === str2) return 1.0;
+  if (str1.length === 0) return 0.0;
+  if (str2.length === 0) return 0.0;
+  
+  const longer = str1.length > str2.length ? str1 : str2;
+  const shorter = str1.length > str2.length ? str2 : str1;
+  
+  if (longer.length === 0) return 1.0;
+  
+  const editDistance = levenshteinDistance(longer, shorter);
+  return (longer.length - editDistance) / longer.length;
+}
+
+// Levenshtein distance calculation
+function levenshteinDistance(str1, str2) {
+  const matrix = [];
+  
+  for (let i = 0; i <= str2.length; i++) {
+    matrix[i] = [i];
+  }
+  
+  for (let j = 0; j <= str1.length; j++) {
+    matrix[0][j] = j;
+  }
+  
+  for (let i = 1; i <= str2.length; i++) {
+    for (let j = 1; j <= str1.length; j++) {
+      if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+        matrix[i][j] = matrix[i - 1][j - 1];
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1,
+          matrix[i][j - 1] + 1,
+          matrix[i - 1][j] + 1
+        );
+      }
+    }
+  }
+  
+  return matrix[str2.length][str1.length];
+}
+
+// Show import results to user
+function showImportResults(results) {
+  let message = `Import completed!\n\n`;
+  message += `✅ Successfully matched: ${results.successful.length} items\n`;
+  
+  if (results.failed.length > 0) {
+    message += `❌ Failed to match: ${results.failed.length} items\n\n`;
+    message += `Failed items:\n`;
+    results.failed.forEach(item => {
+      message += `• Row ${item.row}: ${item.title} - ${item.variant}`;
+      if (item.sku) message += ` (SKU: ${item.sku})`;
+      message += `\n`;
+    });
+    message += `\n💡 Tips for better matching:\n`;
+    message += `• Include SKU numbers when possible\n`;
+    message += `• Use exact product titles from your store\n`;
+    message += `• Try searching manually first to see exact names\n`;
+    message += `• Check for typos in product names or variants`;
+  }
+  
+  alert(message);
+}
+
+// Download CSV template
+function downloadTemplate() {
+  const templateData = [
+    ['Product Title', 'Variant', 'SKU', 'Price', 'Quantity'],
+    ['Sample Product', 'Large', 'SAMPLE-001', '29.99', '2'],
+    ['Another Product', 'Red', 'ANOTHER-002', '15.50', '1'],
+    ['Basic Product', '', 'BASIC-003', '9.99', '3']
+  ];
+  
+  const csvContent = templateData.map(row => 
+    row.map(cell => `"${cell}"`).join(',')
+  ).join('\n');
+  
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  const url = URL.createObjectURL(blob);
+  link.setAttribute('href', url);
+  link.setAttribute('download', 'cart-builder-template.csv');
+  link.style.visibility = 'hidden';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 // Test function to debug cart functionality
 function testCart() {
   console.log('=== TESTING CART ===');
@@ -1429,10 +2135,316 @@ function toggleInstructions() {
   }
 }
 
+// Clear cache function
+function clearProductCache() {
+  productCache.clear();
+  lastSearchTime = 0;
+  console.log('Product cache cleared');
+}
+
+// Debug function to test product loading
+async function debugProducts() {
+  console.log('=== DEBUGGING PRODUCTS ===');
+  
+  try {
+    // Test basic product fetch
+    console.log('Testing basic product fetch...');
+    const response = await fetch('/products.json?limit=5');
+    console.log('Response status:', response.status);
+    
+    if (response.ok) {
+      const data = await response.json();
+      console.log('Raw products data:', data);
+      console.log('Products count:', data.products?.length || 0);
+      
+      if (data.products && data.products.length > 0) {
+        console.log('Sample product:', data.products[0]);
+        console.log('Product status:', data.products[0].status);
+        console.log('Product published_at:', data.products[0].published_at);
+        console.log('Product variants:', data.products[0].variants?.length || 0);
+      }
+    } else {
+      console.log('Failed to fetch products:', response.statusText);
+    }
+  } catch (error) {
+    console.error('Debug error:', error);
+  }
+}
+
+// Collapsible variant functions
+function toggleVariants(productHandle) {
+  console.log('Toggling variants for product:', productHandle);
+  
+  const variantContainer = document.getElementById(`variants-${productHandle}`);
+  const toggleButton = document.getElementById(`toggle-${productHandle}`);
+  
+  if (variantContainer.style.display === 'none' || !variantContainer.style.display) {
+    // Show variants
+    loadAndShowVariants(productHandle);
+    toggleButton.innerHTML = `
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+      </svg>
+      Hide Variants
+    `;
+  } else {
+    // Hide variants
+    variantContainer.style.display = 'none';
+    toggleButton.innerHTML = `
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+      Show Variants
+    `;
+  }
+}
+
+async function loadAndShowVariants(productHandle) {
+  try {
+    console.log('Loading variants for product:', productHandle);
+    
+    // Find the product in search results to get the stored variants
+    const product = searchResults.find(p => p.handle === productHandle);
+    
+    // Decide whether we need to refetch to get inventory/availability fields
+    let shouldRefetch = false;
+    if (product && Array.isArray(product.allVariants) && product.allVariants.length > 0) {
+      const sample = product.allVariants[0];
+      const hasAvailabilityFields = (
+        typeof sample.available === 'boolean' ||
+        typeof sample.available === 'string' ||
+        typeof sample.available === 'number' ||
+        typeof sample.inventory_quantity === 'number' ||
+        typeof sample.availableForSale === 'boolean' ||
+        typeof sample.available_for_sale === 'boolean'
+      );
+      shouldRefetch = !hasAvailabilityFields;
+    } else {
+      shouldRefetch = true;
+    }
+
+    if (shouldRefetch) {
+      console.log('Fetching product via .js endpoint to obtain availability fields...');
+      const response = await fetch(`/products/${productHandle}.js`);
+      if (response.ok) {
+        const fullProduct = await response.json();
+        // .js endpoint returns the product directly
+        console.log('Fetched variants from .js:', fullProduct.variants?.length || 0);
+        showVariantsInCollapsible(fullProduct.title, fullProduct.variants, productHandle);
+      } else {
+        console.warn('Failed to fetch .js endpoint, falling back to stored variants');
+        if (product && product.allVariants) {
+          showVariantsInCollapsible(product.title, product.allVariants, productHandle);
+        } else {
+          throw new Error('No variant data available');
+        }
+      }
+    } else {
+      console.log('Using stored variants with availability fields:', product.allVariants.length);
+      showVariantsInCollapsible(product.title, product.allVariants, productHandle);
+    }
+  } catch (error) {
+    console.error('Error loading variants:', error);
+    alert('Error loading product variants. Please try again.');
+  }
+}
+
+function showVariantsInCollapsible(productTitle, variants, productHandle) {
+  console.log('Showing variants in collapsible for:', productTitle);
+  console.log('Product handle:', productHandle);
+  console.log('Total variants:', variants.length);
+  
+  const container = document.getElementById(`variants-${productHandle}`);
+  console.log('Container element:', container);
+  
+  if (!container) {
+    console.error('Container not found for product handle:', productHandle);
+    return;
+  }
+  
+  // Filter available variants
+  const availableVariants = variants.filter(isVariantAvailable);
+  
+  console.log('Available variants:', availableVariants.length);
+  
+  if (variants.length > 0 && availableVariants.length === 0) {
+    container.innerHTML = `
+      <div class="text-center py-4 text-gray-600">
+        <p>All variants are currently out of stock.</p>
+      </div>
+    `;
+    container.style.display = 'block';
+    console.log('Showing out of stock message');
+    return;
+  }
+  
+  const variantHTML = variants.map(variant => {
+    console.log('Creating HTML for variant:', variant.title);
+    const variantIsAvailable = isVariantAvailable(variant);
+    return `
+      <div class="border-t border-gray-200 py-3 px-3 bg-gray-50">
+        <div class="flex items-center justify-between">
+          <div class="flex-1 space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="font-medium">${variant.title}</span>
+              ${(!variantIsAvailable ? `<span class=\"badge badge-outline text-xs\">Out of stock</span>` : '')}
+            </div>
+            <div class="flex items-center gap-4 text-sm text-muted-foreground">
+              <span>SKU: ${variant.sku || 'N/A'}</span>
+              <span class="font-medium text-foreground">$${parseFloat(variant.price).toFixed(2)}</span>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-2">
+            ${variantIsAvailable ? `
+              <div class="flex items-center border rounded" style="width: 52px; height: 24px;">
+                <button style="width: 16px; height: 24px; border: none; background: transparent; cursor: pointer; font-size: 12px;" onclick="updateVariantQuantity('${variant.id}', -1)">
+                  -
+                </button>
+                <span style="width: 20px; height: 24px; border-left: 1px solid #ccc; border-right: 1px solid #ccc; text-align: center; font-size: 12px; line-height: 24px;" id="variant-qty-${variant.id}">1</span>
+                <button style="width: 16px; height: 24px; border: none; background: transparent; cursor: pointer; font-size: 12px;" onclick="updateVariantQuantity('${variant.id}', 1)">
+                  +
+                </button>
+              </div>
+            ` : ''}
+            <button class="btn btn-sm btn-primary" ${(!variantIsAvailable ? 'disabled style=\"opacity:0.5;cursor:not-allowed;\"' : '')} onclick="addVariantToCart('${variant.id}', '${productTitle}', '${variant.title}')">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+              ${(!variantIsAvailable ? 'Out of stock' : 'Add')}
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+  
+  console.log('Generated HTML length:', variantHTML.length);
+  console.log('HTML preview:', variantHTML.substring(0, 200));
+  
+  container.innerHTML = variantHTML;
+  container.style.display = 'block';
+  
+  console.log('Container display style after setting:', container.style.display);
+  console.log('Container innerHTML length after setting:', container.innerHTML.length);
+}
+
+// Helper for checking variant availability, normalizing theme/API values
+function isVariantAvailable(variant) {
+  // Normalize variant availability across different data shapes
+  if (!variant) return true; // be permissive; only disable when explicitly unavailable
+
+  // Direct boolean
+  if (typeof variant.available === 'boolean') {
+    return variant.available;
+  }
+
+  // Numeric available (some themes encode as 0/1)
+  if (typeof variant.available === 'number') {
+    return variant.available > 0;
+  }
+
+  // String forms
+  if (typeof variant.available === 'string') {
+    const normalized = variant.available.toLowerCase();
+    if (normalized === 'true') return true;
+    if (normalized === 'false') return false;
+    if (normalized === '0') return false;
+  }
+
+  // Inventory quantity (Shopify returns a number when present)
+  if (typeof variant.inventory_quantity === 'number') {
+    // If policy is continue, allow even at 0
+    if (variant.inventory_policy === 'continue') return true;
+    return variant.inventory_quantity > 0;
+  }
+
+  // Some storefront payloads expose availableForSale / available_for_sale
+  if (typeof variant.availableForSale === 'boolean') {
+    return variant.availableForSale;
+  }
+  if (typeof variant.available_for_sale === 'boolean') {
+    return variant.available_for_sale;
+  }
+
+  // Fallback: assume available if we cannot determine
+  return true;
+}
+
+function updateVariantQuantity(variantId, change) {
+  const currentQty = variantQuantities[variantId] || 1;
+  const newQty = Math.max(1, currentQty + change);
+  variantQuantities[variantId] = newQty;
+  document.getElementById(`variant-qty-${variantId}`).textContent = newQty;
+}
+
+// Store variant quantities
+const variantQuantities = {};
+
+// Helper function to extract parent SKU (before hyphen)
+function getParentSku(sku) {
+  if (!sku || sku === 'N/A') return 'N/A';
+  const parts = sku.split('-');
+  return parts[0];
+}
+
+function addVariantToCart(variantId, productTitle, variantTitle) {
+  const quantity = variantQuantities[variantId] || 1;
+  
+  console.log('=== ADDING VARIANT TO CART ===');
+  console.log('VariantId:', variantId);
+  console.log('ProductTitle:', productTitle);
+  console.log('VariantTitle:', variantTitle);
+  console.log('Quantity:', quantity);
+  console.log('Search results:', searchResults);
+  
+  // Find the specific variant data from the loaded variants
+  let variantData = null;
+  
+  // Look through all search results to find the product with this variant
+  for (const product of searchResults) {
+    console.log('Checking product:', product.title, 'allVariants:', product.allVariants);
+    if (product.allVariants) {
+      variantData = product.allVariants.find(v => {
+        console.log('Comparing variant:', v.id, 'with:', variantId, 'match:', v.id == variantId);
+        return v.id == variantId; // Use == for type coercion
+      });
+      if (variantData) {
+        console.log('Found variant data:', variantData);
+        break;
+      }
+    }
+  }
+  
+  if (!variantData) {
+    console.error('Variant data not found for ID:', variantId);
+    console.log('Available variant IDs:', searchResults.flatMap(p => p.allVariants || []).map(v => v.id));
+  }
+  
+  // Create product object with the correct variant data
+  const product = {
+    id: variantId,
+    title: productTitle,
+    variant: variantTitle,
+    sku: variantData ? variantData.sku : '',
+    price: variantData ? parseFloat(variantData.price) : 0,
+    variantId: variantId,
+    handle: '',
+    image: '',
+    available: true
+  };
+  
+  console.log('Final product object:', product);
+  
+  addToCart(product, quantity);
+  // Keep results open; close handled by outside click listener. Optionally keep input value.
+  // document.getElementById('search-input').value = '';
+  
+  showAddSuccess(productTitle + ' (' + variantTitle + ')', quantity);
+}
+
 // Initialize
-loadShopifyProducts().then(() => {
-  updateCartDisplay();
-    });
+updateCartDisplay();
   </script>
 
 {% schema %}
@@ -1441,7 +2453,25 @@ loadShopifyProducts().then(() => {
     "target": "section",
     "settings": [
       { "type": "product", "id": "product", "label": "product", "autofill": true },
-      { "type": "color", "id": "colour", "label": "Star Colour", "default": "#ff0000" }
+      { "type": "color", "id": "colour", "label": "Star Colour", "default": "#ff0000" },
+      {
+        "type": "select",
+        "id": "text_size",
+        "label": "Text Size",
+        "options": [
+          { "value": "small", "label": "Small" },
+          { "value": "medium", "label": "Medium" },
+          { "value": "large", "label": "Large" }
+        ],
+        "default": "small"
+      },
+      {
+        "type": "text",
+        "id": "excluded_tag",
+        "label": "Excluded Product Tag",
+        "info": "Products with this tag will be excluded from search results. Leave empty to show all products.",
+        "default": "PROGRAM"
+      }
     ]
   }
   {% endschema %}
