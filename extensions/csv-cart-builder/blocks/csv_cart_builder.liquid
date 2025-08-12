@@ -541,63 +541,60 @@
     <div class="max-w-4xl mx-auto" style="background-color: transparent !important; margin-bottom: 20px;">
       <div class="border-b border-black" style="background-color: transparent !important;">
         <button class="w-full p-4 text-left flex items-center justify-between transition-colors" onclick="toggleInstructions()" style="background-color: transparent !important; border: none; outline: none;">
-          <h2 class="text-lg font-semibold text-foreground">Get Started [FPO]</h2>
+          <h2 class="text-lg font-semibold text-foreground">Get Started</h2>
           <svg id="instructions-icon" class="w-4 h-4 text-muted-foreground transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 9l6 6 6-6"></path>
           </svg>
         </button>
         
-        <div id="instructions-content" class="hidden p-6 space-y-4 text-left">
-          <div class="space-y-3">
-            <div>
-              <h3 class="font-medium text-foreground">🔍 Search & Add Products</h3>
-              <p class="text-sm text-muted-foreground">
-                Type in the search box to find products by name, SKU, or variant. Click the "Add" button to add items to your shopping list. 
-                Out-of-stock items will be greyed out and cannot be added.
-              </p>
-            </div>
-            
-            <div>
-              <h3 class="font-medium text-foreground">📋 Manage Your Shopping List</h3>
-              <p class="text-sm text-muted-foreground">
-                Use the quantity controls to adjust amounts, or remove items entirely. The total value updates automatically as you modify your list.
-              </p>
-            </div>
-            
-            <div>
-              <h3 class="font-medium text-foreground">📥 Import from CSV</h3>
-              <p class="text-sm text-muted-foreground">
-                Click "Import CSV" to bulk add products. Your CSV file must include these columns:
-              </p>
-              <ul class="text-sm text-muted-foreground ml-4 mt-1 space-y-1">
-                <li>• <strong>Product Title</strong> - The exact name of the product</li>
-                <li>• <strong>Variant</strong> - The specific variant (e.g., "Large", "Red", "Default Title")</li>
-                <li>• <strong>SKU</strong> - Stock keeping unit (recommended for accurate matching)</li>
-                <li>• <strong>Price</strong> - Product price (numbers only)</li>
-                <li>• <strong>Quantity</strong> - How many to add (numbers only)</li>
-              </ul>
-              <p class="text-sm text-muted-foreground mt-2">
-                <strong>Tip:</strong> Including the SKU will ensure the most accurate product matching. 
-                If a product isn't found, try searching for it manually first to see the exact title and variant names.
-              </p>
-            </div>
-            
-            <div>
-              <h3 class="font-medium text-foreground">📤 Export & Add to Cart</h3>
-              <p class="text-sm text-muted-foreground">
-                Export your list as CSV for backup, or click "Add to Cart" to transfer all items to your Shopify cart and proceed to checkout.
-              </p>
-            </div>
-            
-            <div>
-              <h3 class="font-medium text-foreground">💡 Tips</h3>
-              <ul class="text-sm text-muted-foreground ml-4 space-y-1">
-                <li>• Use the search to quickly find products by name or SKU</li>
-                <li>• Click the variant ID to copy it to clipboard for CSV imports</li>
-                <li>• Out-of-stock items are clearly marked and cannot be added</li>
-                <li>• Your shopping list persists until you clear it or refresh the page</li>
-              </ul>
-            </div>
+        <div id="instructions-content" class="hidden p-6 space-y-6 text-left">
+          <!-- Step 1 -->
+          <div class="space-y-2">
+            <h3 class="font-medium text-foreground">1) Find your products</h3>
+            <p class="text-sm text-muted-foreground">Use the search box to look up items by name or SKU. If a product has options (size, color), click “Show Variants” to see them. Items that are out of stock will be clearly marked and cannot be added.</p>
+            <div class="rounded border p-3 text-xs text-muted-foreground">[Image Placeholder: Searching products and opening variants]</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="space-y-2">
+            <h3 class="font-medium text-foreground">2) Add to your list</h3>
+            <p class="text-sm text-muted-foreground">Click “Add” to place an item into your Shopping List. For products with variants, add the specific variant you need. You can add several items in a row; the results list stays open until you click outside it.</p>
+            <div class="rounded border p-3 text-xs text-muted-foreground">[Image Placeholder: Adding items to the shopping list]</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="space-y-2">
+            <h3 class="font-medium text-foreground">3) Review and adjust</h3>
+            <p class="text-sm text-muted-foreground">In the Shopping List, use the plus and minus buttons to change quantities or click the trash icon to remove an item. The line Total and overall Total update automatically.</p>
+            <div class="rounded border p-3 text-xs text-muted-foreground">[Image Placeholder: Adjusting quantities and seeing totals]</div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="space-y-2">
+            <h3 class="font-medium text-foreground">4) Importing from CSV (optional)</h3>
+            <p class="text-sm text-muted-foreground">Click “Import CSV” to add many items at once. Your file should include columns: Product Title, Variant, SKU, Price, Quantity. For single‑variant products, you may leave Variant blank.</p>
+            <ul class="text-sm text-muted-foreground ml-4 mt-1 space-y-1">
+              <li>• <strong>Tip</strong>: Including the SKU gives the most accurate match.</li>
+              <li>• If something doesn’t match, you’ll see a note. You can add it manually from search.</li>
+            </ul>
+            <div class="rounded border p-3 text-xs text-muted-foreground">[Image Placeholder: Example CSV and import button]</div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="space-y-2">
+            <h3 class="font-medium text-foreground">5) Add to Shopify cart</h3>
+            <p class="text-sm text-muted-foreground">When you’re ready, click “Add to Cart”. We’ll quickly check stock for each item. If something is out of stock, we’ll highlight it for you to remove before continuing.</p>
+            <div class="rounded border p-3 text-xs text-muted-foreground">[Image Placeholder: Add to Cart and out-of-stock highlight]</div>
+          </div>
+
+          <!-- Helpful notes -->
+          <div class="space-y-2">
+            <h3 class="font-medium text-foreground">Helpful notes</h3>
+            <ul class="text-sm text-muted-foreground ml-4 space-y-1">
+              <li>• You can export your list as a CSV for record‑keeping.</li>
+              <li>• The list stays until you clear it or refresh the page.</li>
+              <li>• For single‑variant products, Variant can be left blank in CSV (no need to type “Default Title”).</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -758,6 +755,36 @@
 // Get the excluded tag setting from the block configuration
 const excludedTag = {{ block.settings.excluded_tag | json }};
 console.log('Excluded tag setting:', excludedTag);
+
+// Customer access control setup
+// Capture the logged-in customer's tags from Liquid into JS
+const customerTags = {{ customer.tags | json }} || [];
+console.log('Customer tags:', customerTags);
+
+// Product tags that gate visibility. If a product has any of these tags,
+// only customers who also have at least one of the same tags can see it.
+const accessGateTags = ['VIP-PMA', 'VIP-CMA', 'RSB'];
+
+function normalizeProductTags(tags) {
+  if (!tags) return [];
+  if (Array.isArray(tags)) return tags.map(t => String(t).trim()).filter(Boolean);
+  // Shopify often returns comma-separated string
+  return String(tags).split(',').map(t => t.trim()).filter(Boolean);
+}
+
+function isProductVisibleToCustomer(product) {
+  try {
+    const productTags = normalizeProductTags(product.tags);
+    const gatedOnProduct = productTags.filter(t => accessGateTags.includes(t));
+    // If no gated tags are present, product is visible to everyone
+    if (gatedOnProduct.length === 0) return true;
+    // Otherwise, require customer to have at least one of the gated tags present on the product
+    return gatedOnProduct.some(tag => customerTags.includes(tag));
+  } catch (e) {
+    console.warn('Access check failed, default allow:', e);
+    return true;
+  }
+}
 
 // Shopify product data - will be populated from your store
 let shopifyProducts = [];
@@ -1036,14 +1063,21 @@ async function performPredictiveSearch(query) {
           
           console.log('Valid products with details:', validProducts.length);
           
-          // Filter out products with excluded tag (if set)
-          const filteredProducts = excludedTag ? validProducts.filter(product => {
-            const hasExcludedTag = product.tags && product.tags.includes(excludedTag);
+          // Filter out products with excluded tag (if set) and apply customer access control
+          const filteredProducts = (excludedTag ? validProducts.filter(product => {
+            const productTags = normalizeProductTags(product.tags);
+            const hasExcludedTag = productTags.includes(excludedTag);
             if (hasExcludedTag) {
               console.log(`Excluding product with ${excludedTag} tag: ${product.title}`);
             }
             return !hasExcludedTag;
-          }) : validProducts;
+          }) : validProducts).filter(p => {
+            const visible = isProductVisibleToCustomer(p);
+            if (!visible) {
+              console.log('Hiding gated product for this customer:', p.title, p.tags);
+            }
+            return visible;
+          });
           
           console.log('Products after excluded tag filter:', filteredProducts.length);
           
@@ -1163,14 +1197,15 @@ async function performPredictiveSearch(query) {
               const fallbackData = await fallbackResponse.json();
               const allProducts = fallbackData.products.filter(p => p.published_at && p.status === 'active');
               
-              // Filter out products with excluded tag (if set)
-              const filteredProducts = excludedTag ? allProducts.filter(product => {
-                const hasExcludedTag = product.tags && product.tags.includes(excludedTag);
+              // Filter out products with excluded tag (if set) and apply customer access control
+              const filteredProducts = (excludedTag ? allProducts.filter(product => {
+                const productTags = normalizeProductTags(product.tags);
+                const hasExcludedTag = productTags.includes(excludedTag);
                 if (hasExcludedTag) {
                   console.log(`Excluding product with ${excludedTag} tag (fallback): ${product.title}`);
                 }
                 return !hasExcludedTag;
-              }) : allProducts;
+              }) : allProducts).filter(p => isProductVisibleToCustomer(p));
               
               // Search for exact SKU matches
               const skuMatches = [];
@@ -1215,14 +1250,15 @@ async function performPredictiveSearch(query) {
           const skuData = await skuResponse.json();
           const allProducts = skuData.products.filter(p => p.published_at && p.status === 'active');
           
-          // Filter out products with excluded tag (if set)
-          const filteredProducts = excludedTag ? allProducts.filter(product => {
-            const hasExcludedTag = product.tags && product.tags.includes(excludedTag);
+          // Filter out products with excluded tag (if set) and apply customer access control
+          const filteredProducts = (excludedTag ? allProducts.filter(product => {
+            const productTags = normalizeProductTags(product.tags);
+            const hasExcludedTag = productTags.includes(excludedTag);
             if (hasExcludedTag) {
               console.log(`Excluding product with ${excludedTag} tag (direct SKU): ${product.title}`);
             }
             return !hasExcludedTag;
-          }) : allProducts;
+          }) : allProducts).filter(p => isProductVisibleToCustomer(p));
           
           // Search for exact SKU matches
           const skuMatches = [];

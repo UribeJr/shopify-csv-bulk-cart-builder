@@ -3,7 +3,7 @@
 client_id = "ab818f3823c4c0764c84eb1e6eb1a2da"
 name = "csv-cart-builder"
 handle = "csv-cart-builder"
-application_url = "https://specifically-screensavers-traveller-want.trycloudflare.com"
+application_url = "https://louisville-massage-best-thinkpad.trycloudflare.com"
 embedded = true
 
 [build]
@@ -26,7 +26,7 @@ api_version = "2025-07"
 scopes = "write_products"
 
 [auth]
-redirect_urls = ["https://specifically-screensavers-traveller-want.trycloudflare.com/auth/callback", "https://specifically-screensavers-traveller-want.trycloudflare.com/auth/shopify/callback", "https://specifically-screensavers-traveller-want.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://louisville-massage-best-thinkpad.trycloudflare.com/auth/callback", "https://louisville-massage-best-thinkpad.trycloudflare.com/auth/shopify/callback", "https://louisville-massage-best-thinkpad.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false
